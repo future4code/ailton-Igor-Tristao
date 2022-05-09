@@ -1,5 +1,6 @@
 
 /*
+    Exercícios de interpretação de código
 1) 
 Primeiro será mostrado o valor de B, logo, 10.  (10)
 Segundo será mostrado os dois valores, a e b, após a alteração do b, logo 10 e 5.  (10 5)
@@ -13,9 +14,9 @@ Logo, aparecerá: (10, 10, 10)
 3) 
 Variável P pode ser horasTrabalhadasPorDia
 Variável T pode ser salarioDiario
-*/
 
-/* Exercício de escrita de código
+
+    Exercício de escrita de código
 
 1) */
 let seuNome               // a)
