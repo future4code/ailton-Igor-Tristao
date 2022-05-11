@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-1 Batata frita 
-2 Pizza
-=======
 1. pizza
 2. batata frita
 3. sorvete
->>>>>>> 371b815fdafcfa4e087de7363f0b1f0cdb51dc63
-=======
-1. pizza
-2. batata frita
-3. sorvete
->>>>>>> 8fb5d29f29070ec9c39791e3debc4a97848766cc
