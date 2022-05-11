@@ -13,12 +13,12 @@
 
 // Exercícios de escrita de código
 
-// 1.
+// // 1.
 const nome = prompt("Qual é o seu nome?")
 const email = prompt("Qual é o seu e-mail?")
 console.log(`O e-mail ${email} foi cadastrado com sucesso. Seja bem-vinda(o) ${nome}.`)
 
-// // 2.
+//2.
 const comidasFavoritas = ["Batata-frita", "Macarrão", "Bolo", "Pizza", "Pão-de-queijo"]
 console.log(comidasFavoritas)
 console.log(`Essas são minhas comidas favoritas:
@@ -51,9 +51,8 @@ console.log(listaDeTarefas)
 // Desafio
 // 1.
 const frase = prompt("Insira uma frase")
-const fraseSemEspaco = frase.replaceAll(" ","")
-const array = Array.from(fraseSemEspaco)
-onsole.log(array)
+const array = frase.split(' ')
+console.log(array)
 
 // 2.
 const frutas = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]
