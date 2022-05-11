@@ -48,10 +48,17 @@ const indiceTarefaRealizada = prompt(`Qual tarefa você já realizou?
 listaDeTarefas.splice(indiceTarefaRealizada,1)
 console.log(listaDeTarefas)
 
+// Desafio
+// 1.
+const frase = prompt("Insira uma frase")
+const fraseSemEspaco = frase.replaceAll(" ","")
+const array = Array.from(fraseSemEspaco)
+onsole.log(array)
 
-
-
-
+// 2.
+const frutas = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]
+let index = frutas.indexOf("Abacaxi")
+console.log(`O índice do abacaxi é: ${index} e o tamanho do array é: ${frutas.length}`)
 
 
 
