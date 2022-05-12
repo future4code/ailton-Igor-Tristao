@@ -84,13 +84,10 @@ function multiplicar(a,b) {
 const num1Usuario = Number(prompt("Insira o primeiro número"))
 const num2Usuario = Number(prompt("Insira o segundo número"))
 console.log(`Números inseridos: ${num1Usuario} e ${num2Usuario}
-Soma:`, somar(num1Usuario,num2Usuario),
-`
-Diferença:`, subtrair(num1Usuario,num2Usuario),
-`
-Multiplicação:`, multiplicar(num1Usuario,num2Usuario),
-`
-Divisão:`, dividir(num1Usuario,num2Usuario))
+Soma: ${somar(num1Usuario,num2Usuario)}
+Diferença: ${subtrair(num1Usuario,num2Usuario)}
+Multiplicação: ${multiplicar(num1Usuario,num2Usuario)}
+Divisão: ${dividir(num1Usuario,num2Usuario)}`)
 
 // Desafio!
 
@@ -107,7 +104,7 @@ numero(soma(10,15))    //25
 
 // 2.
 function pitagoras(cat1, cat2) {
-    let calculo = Math.sqrt(((cat1*cat1)+(cat2*cat2)))
+    let calculo = Math.sqrt(((cat1*cat1)+(cat2*cat2)))    //  ** = potencia
     return calculo
 }
 console.log(pitagoras(3,4))   //5
