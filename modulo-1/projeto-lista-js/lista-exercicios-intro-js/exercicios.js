@@ -135,16 +135,16 @@ function checaRenovacaoRG() {
   const anoIdentidadeEmissao = Number(prompt  ('Insira o ano na qual sua carteira de identidade foi emitida'))
   let idade = anoAtual-anoNascimento
   let identidadeRenovacao = anoAtual-anoIdentidadeEmissao
-  const renovar = ((idade >= 20) && (identidadeRenovacao >= 5)) || ((idade > 21) && (identidadeRenovacao >= 10))
+  const renovar = ((idade <= 20) && (identidadeRenovacao >= 5)) || ((idade <= 50) && (identidadeRenovacao >= 10)) || ((idade > 50) && (identidadeRenovacao >= 15))
   console.log(renovar)  
 }
-
-
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
 
+
+  
 }
 
 // EXERCÍCIO 15
