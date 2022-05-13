@@ -38,8 +38,7 @@ function imprimeIdade() {
 // EXERCÍCIO 03
 function calculaIMC(peso, altura) {
   // implemente sua lógica aqui
-  let imc = peso/(altura*altura)
-  return imc
+  return peso/(altura*altura)
 }
 
 // EXERCÍCIO 04
@@ -64,37 +63,32 @@ function imprimeTresCoresFavoritas() {
 // EXERCÍCIO 06
 function retornaStringEmMaiuscula(string) {
   // implemente sua lógica aqui
-  const stringMaiuscula = string.toUpperCase()
-  return stringMaiuscula
+  return string.toUpperCase()
 }
 
 // EXERCÍCIO 07
 function calculaIngressosEspetaculo(custo, valorIngresso) {
   // implemente sua lógica aqui
-  const ingressosVendidos = custo/valorIngresso
-  return ingressosVendidos
+  return custo/valorIngresso
+ 
 }
 
 // EXERCÍCIO 08
 function checaStringsMesmoTamanho(string1, string2) {
   // implemente sua lógica aqui
-  const comparacaoTamanho = string1.length === string2.length
-  return comparacaoTamanho
+  return string1.length === string2.length
 }
-
 
 // EXERCÍCIO 09
 function retornaPrimeiroElemento(array) {
   // implemente sua lógica aqui
-  const array1 = array
-  return array1[0]
+  return array[0]
 }
 
 // EXERCÍCIO 10
 function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
-const array1 = array.pop()
-return array1
+  return array.pop()
 }
 
 // EXERCÍCIO 11
@@ -109,8 +103,7 @@ return array
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
   // implemente sua lógica aqui
-  const igualdade = string1.toLowerCase() === string2.toLowerCase()
-  return igualdade
+  return string1.toLowerCase() === string2.toLowerCase()
 }
 
 // EXERCÍCIO 13
@@ -128,8 +121,7 @@ function checaRenovacaoRG() {
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
-  const check = (ano%400 === 0) || (ano%4 === 0) && (ano%100 !== 0) 
-  return check
+  return (ano%400 === 0) || (ano%4 === 0) && (ano%100 !== 0) 
 }
 
 // EXERCÍCIO 15
