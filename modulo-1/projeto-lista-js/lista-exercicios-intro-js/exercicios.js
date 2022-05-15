@@ -70,7 +70,6 @@ function retornaStringEmMaiuscula(string) {
 function calculaIngressosEspetaculo(custo, valorIngresso) {
   // implemente sua lógica aqui
   return custo/valorIngresso
- 
 }
 
 // EXERCÍCIO 08
@@ -88,14 +87,14 @@ function retornaPrimeiroElemento(array) {
 // EXERCÍCIO 10
 function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
-  return array.pop()
+  return array[array.length-1]
 }
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
 const array1 = array[0]
-array[0] = array[[array.length-1]]
+array[0] = array[array.length-1]
 array[array.length-1] = array1
 return array
 }
@@ -130,6 +129,6 @@ function checaValidadeInscricaoLabenu() {
   let idade = prompt('Você tem mais de 18 anos?')
   let ensino = prompt('Você possui ensino médio completo?')
   let disponibilidade = prompt('Você possui disponibilidade exclusiva durante os horários do curso?')
-  const check = idade === "sim" && ensino === "sim" && disponibilidade === "sim"
+  const check = idade.toLowerCase() === "sim" && ensino.toLowerCase() === "sim" && disponibilidade.toLowerCase() === "sim"
   console.log(check)
 }
