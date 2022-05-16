@@ -27,15 +27,12 @@
 
 // 1.a.
 const pessoa = {
-	nome: 'Igor',
-	apelidos: ['bzerka','guinho','igr']
+	nome: 'igor',
+	apelidos: ['bzerka','igor','igr']
 }
 
 function apelido (obj) {
-	const novoObj = {
-		...obj,
-	}
-	console.log(`Eu sou ${novoObj.nome}, mas pode me chamar de: ${novoObj.apelidos[0]}, ${novoObj.apelidos[1]} ou ${novoObj.apelidos[2]}.`)
+	console.log(`Eu sou ${obj.nome}, mas pode me chamar de: ${obj.apelidos[0]}, ${obj.apelidos[1]} ou ${obj.apelidos[2]}.`)
 }
 // apelido(pessoa)
 
@@ -43,7 +40,7 @@ function apelido (obj) {
 
 const novaPessoa = {
 	...pessoa,
-	apelidos: ['bzrk','gui','igor']
+	apelidos: ['bzrk','igr','igor']
 }
 // apelido(novaPessoa)
 
@@ -62,10 +59,7 @@ const pessoa2 = {
 }
 
 function infos(obj) {
-	const novoObj = {
-		...obj,
-	}
-console.log([novoObj.nome, novoObj.nome.length, novoObj.idade, novoObj.profissao, novoObj.profissao.length])
+console.log([obj.nome, obj.nome.length, obj.idade, obj.profissao, obj.profissao.length])
 }
 // infos(pessoa1)
 // infos(pessoa2)
@@ -104,12 +98,12 @@ function info(nome, idade, profissao) {
 	nome = prompt('Insira seu nome')
 	idade = prompt('Insira sua idade')
 	profissao = prompt('Insira sua profissao')
-	const novoObj = {
+	const Obj = {
 		nome: nome,
 		idade: idade,
 		profissao: profissao
 	}
-	console.log(novoObj)
+	console.log(Obj)
 }
 // info()
 
