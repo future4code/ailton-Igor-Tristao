@@ -117,329 +117,78 @@ function seraQueVai(string, number) {
 // console.log(seraQueVai(genero1, preçoIngresso1))
 
 // 2.
-const nomeCompleto = prompt('Insira seu nome completo')
-const tipoDeJogo = prompt(`Insira o tipo do jogo:
-IN - Internacional
-DO - Doméstico`)
-const etapaDoJogo = prompt(`Insira a etapa do jogo:
-SF - Semi-final,
-DT - Decisão de terceiro lugar ou
-FI - Final`)
-const categoria = prompt(`Insira a categoria do jogo (1, 2, 3 ou 4)`)
-const qntDeIngressos = Number(prompt('Quantos ingressõs você vai comprar?'))
 
-function valorCategoria(tipoDeJogo, etapaDoJogo, categoria) {
-    if (tipoDeJogo.toLowerCase() === 'in' && etapaDoJogo.toLowerCase() === 'sf' && categoria === '1') {
-        const valorIngresso = 1300*4.1
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Internacional 
-        Etapa do jogo:  Semi-final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'in' && etapaDoJogo.toLowerCase() === 'sf' && categoria === '2') {
-        const valorIngresso = 880*4.1
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Internacional 
-        Etapa do jogo:  Semi-final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'in' && etapaDoJogo.toLowerCase() === 'sf' && categoria === '3') {
-        const valorIngresso = 550*4.1
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Internacional 
-        Etapa do jogo:  Semi-final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'in' && etapaDoJogo.toLowerCase() === 'sf' && categoria === '4') {
-        const valorIngresso = 220*4.1
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Internacional 
-        Etapa do jogo:  Semi-final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'do' && etapaDoJogo.toLowerCase() === 'sf' && categoria === '1') {
-        const valorIngresso = 1300
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Nacional 
-        Etapa do jogo:  Semi-final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'do' && etapaDoJogo.toLowerCase() === 'sf' && categoria === '2') {
-        const valorIngresso = 880
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Nacional
-        Etapa do jogo:  Semi-final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'do' && etapaDoJogo.toLowerCase() === 'sf' && categoria === '3') {
-        const valorIngresso = 550
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Nacional
-        Etapa do jogo:  Semi-final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'do' && etapaDoJogo.toLowerCase() === 'sf' && categoria === '4') {
-        const valorIngresso = 220
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Nacional 
-        Etapa do jogo:  Semi-final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'in' && etapaDoJogo.toLowerCase() === 'dt' && categoria === '1') {
-        const valorIngresso = 660*4.1
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Internacional 
-        Etapa do jogo:  Decisão do 3° lugar
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'in' && etapaDoJogo.toLowerCase() === 'dt' && categoria === '2') {
-        const valorIngresso = 440*4.1
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Internacional 
-        Etapa do jogo:  Decisão do 3° lugar
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'in' && etapaDoJogo.toLowerCase() === 'dt' && categoria === '3') {
-        const valorIngresso = 330*4.1
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Internacional 
-        Etapa do jogo:  Decisão do 3° lugar
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'in' && etapaDoJogo.toLowerCase() === 'dt' && categoria === '4') {
-        const valorIngresso = 170*4.1
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Internacional 
-        Etapa do jogo:  Decisão do 3° lugar
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'do' && etapaDoJogo.toLowerCase() === 'dt' && categoria === '1') {
-        const valorIngresso = 660
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Nacional 
-        Etapa do jogo:  Decisão do 3° lugar
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'do' && etapaDoJogo.toLowerCase() === 'dt' && categoria === '2') {
-        const valorIngresso = 440
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Nacional
-        Etapa do jogo:  Decisão do 3° lugar
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'do' && etapaDoJogo.toLowerCase() === 'dt' && categoria === '3') {
-        const valorIngresso = 330
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Nacional
-        Etapa do jogo:  Decisão do 3° lugar
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'do' && etapaDoJogo.toLowerCase() === 'dt' && categoria === '4') {
-        const valorIngresso = 170
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Nacional 
-        Etapa do jogo:  Decisão do 3° lugar
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'in' && etapaDoJogo.toLowerCase() === 'fi' && categoria === '1') {
-        const valorIngresso = 1980*4.1
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Internacional 
-        Etapa do jogo:  Final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'in' && etapaDoJogo.toLowerCase() === 'fi' && categoria === '2') {
-        const valorIngresso = 1320*4.1
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Internacional 
-        Etapa do jogo:  Final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'in' && etapaDoJogo.toLowerCase() === 'fi' && categoria === '3') {
-        const valorIngresso = 880*4.1
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Internacional 
-        Etapa do jogo:  Final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'in' && etapaDoJogo.toLowerCase() === 'fi' && categoria === '4') {
-        const valorIngresso = 330*4.1
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Internacional 
-        Etapa do jogo:  Final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'do' && etapaDoJogo.toLowerCase() === 'fi' && categoria === '1') {
-        const valorIngresso = 1980
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Nacional 
-        Etapa do jogo:  Final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'do' && etapaDoJogo.toLowerCase() === 'fi' && categoria === '2') {
-        const valorIngresso = 1320
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Nacional
-        Etapa do jogo:  Final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'do' && etapaDoJogo.toLowerCase() === 'fi' && categoria === '3') {
-        const valorIngresso = 880
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Nacional
-        Etapa do jogo:  Final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
-    else if (tipoDeJogo.toLowerCase() === 'do' && etapaDoJogo.toLowerCase() === 'fi' && categoria === '4') {
-        const valorIngresso = 330
-        const valorTotal = valorIngresso*qntDeIngressos
-        console.log(`---Dados da compra--- 
-        Nome do cliente:  ${nomeCompleto}
-        Tipo do jogo:  Nacional 
-        Etapa do jogo:  Final
-        Categoria:  ${categoria}
-        Quantidade de Ingressos:  ${qntDeIngressos} ingressos 
-        ---Valores--- 
-        Valor do ingresso:  R$ ${valorIngresso}
-        Valor total:  R$ ${valorTotal}`)
-    }
+const cadastro = {
+    nome: prompt('Insira seu nome completo'),
+    tipoDeJogo: prompt(`Insira o tipo do jogo:
+    IN - Internacional
+    DO - Doméstico`),
+    etapaDoJogo: prompt(`Insira a etapa do jogo:
+    SF - Semi-final,
+    DT - Decisão de terceiro lugar ou
+    FI - Final`),
+    categoria: prompt(`Insira a categoria do jogo (1, 2, 3 ou 4)`),
+    qntDeIngresso: Number(prompt('Quantos ingressõs você vai comprar?')),
+    precoIngresso: 0
 }
-// console.log(valorCategoria(tipoDeJogo,etapaDoJogo,categoria))
+
+function valorIngresso(obj) {  
+    if (obj.tipoDeJogo.toLowerCase() === 'in') {
+        obj.tipoDeJogo = 'Internacional'
+        if(obj.etapaDoJogo.toLowerCase() === 'sf') {  
+            obj.etapaDoJogo = 'Semi-final'  
+            if(obj.categoria === '1') {obj.precoIngresso = 1320*4.1}
+            else if(obj.categoria === '2') {obj.precoIngresso = 880*4.1}
+            else if(obj.categoria === '3') {obj.precoIngresso = 550*4.1}
+            else if(obj.categoria === '4') {obj.precoIngresso = 220*4.1}
+        }
+        else if(obj.etapaDoJogo.toLowerCase() === 'dt') {
+            obj.etapaDoJogo = 'Decisão 3° lugar'  
+            if(obj.categoria === '1') {obj.precoIngresso = 660*4.1}
+            else if(obj.categoria === '2') {obj.precoIngresso = 440*4.1}
+            else if(obj.categoria === '3') {obj.precoIngresso = 330*4.1}
+            else if(obj.categoria === '4') {obj.precoIngresso = 170*4.1}
+        }
+        else if(obj.etapaDoJogo.toLowerCase() === 'fi') {
+            obj.etapaDoJogo = 'Final'  
+            if(obj.categoria === '1') {obj.precoIngresso = 1980*4.1}
+            else if(obj.categoria === '2') {obj.precoIngresso = 1320*4.1}
+            else if(obj.categoria === '3') {obj.precoIngresso = 880*4.1}
+            else if(obj.categoria === '4') {obj.precoIngresso = 330*4.1}
+        }    
+    }
+    else if(obj.tipoDeJogo.toLowerCase() === 'do') {
+        obj.tipoDeJogo = 'Nacional'  
+        if(obj.etapaDoJogo.toLowerCase() === 'sf') {
+            obj.etapaDoJogo = 'Semi-final'  
+            if(obj.categoria === '1') {obj.precoIngresso = 1320}
+            else if(obj.categoria === '2') {obj.precoIngresso = 880}
+            else if(obj.categoria === '3') {obj.precoIngresso = 550}
+            else if(obj.categoria === '4') {obj.precoIngresso = 220}
+        }
+        else if(obj.etapaDoJogo.toLowerCase() === 'dt') {
+            obj.etapaDoJogo = 'Decisão 3° lugar'  
+            if(obj.categoria === '1') { obj.precoIngresso = 660}
+            else if(obj.categoria === '2') { obj.precoIngresso = 440}
+            else if(obj.categoria === '3') {obj.precoIngresso = 330}
+            else if(obj.categoria === '4') {obj.precoIngresso = 170}
+        }
+        else if(obj.etapaDoJogo.toLowerCase() === 'fi') {
+            obj.etapaDoJogo = 'Final'  
+            if(obj.categoria === '1') {obj.precoIngresso = 1980}
+            else if(obj.categoria === '2') {obj.precoIngresso = 1320}
+            else if(obj.categoria === '3') {obj.precoIngresso = 880}
+            else if(obj.categoria === '4') {obj.precoIngresso = 330}
+        }    
+}
+console.log(`---Dados da compra--- 
+Nome do cliente:  ${obj.nome}
+Tipo do jogo:  ${obj.tipoDeJogo}
+Etapa do jogo:  ${obj.etapaDoJogo}
+Categoria:  ${obj.categoria}
+Quantidade de Ingressos:  ${obj.qntDeIngresso} ingressos 
+---Valores--- 
+Valor do ingresso:  R$ ${obj.precoIngresso}
+Valor total:  R$ ${obj.precoIngresso*obj.qntDeIngresso}`)
+}
+// valorIngresso(cadastro)
