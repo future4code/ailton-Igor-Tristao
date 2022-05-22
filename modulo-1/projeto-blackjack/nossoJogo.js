@@ -41,6 +41,12 @@ function blackjack (valorusuario, valorcomp) {
    if(valorusuario === valorcomp) {
       return `Empate!`
    }
+   else if(valorusuario > 21 && valorcomp <= 21) {
+      return `O computador ganhou!`
+   }
+   else if(valorusuario <= 21 && valorcomp > 21) {
+      return `O usuario ganhou!`
+   }
    else if(valorusuario > valorcomp) {
       return `O usuário ganhou!`
    }
@@ -48,6 +54,4 @@ function blackjack (valorusuario, valorcomp) {
       return `O computador ganhou!`
    }
 }
-
-
 
