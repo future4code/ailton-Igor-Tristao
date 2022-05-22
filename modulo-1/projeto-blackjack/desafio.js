@@ -8,6 +8,11 @@
     console.log(carta.valor) // imprime o valor da carta (um número). Exemplo: 10 (dado que "K" vale 10)
  * 
  * 
+ * oii, tentei de toda forma fazer um jeito de clonar os objetos usuário e computador mas não consegui, acabou que o
+ * código ficou gigante porque toda vez eu tinha que declarar o objeto inteeiro :(
+ * Outra coisa foi em relação a tirar dois A's, como a probabilidade é muito pequena eu acabei colocando apenas para 
+ * comprar outras cartas e mostrar o resultado (vou tentar implementar, caso não consiga vou deixar assim)
+ * 
  * 
  */
 
