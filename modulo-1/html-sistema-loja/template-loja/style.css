@@ -2,6 +2,16 @@ body {
     background-color: #f8f8f8;
 }
 
+html::before{
+    content: '';
+    background-image: url("../img/wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 263%;
+    opacity: 0.2;    
+}
 
 .cabecalho {
     background-image: url("../img/titulo.jpg");
@@ -13,11 +23,16 @@ body {
 
 .lista-navegacao {
     margin-left: 380px;
+    position: relative;
+}
 
+.lista-navegacao-outros {
+    position: relative;
 }
 
 .bem-vindos {
     margin-bottom: 0px;
+    position: relative;
 }
 
 .texto-pagina-inicial {
@@ -25,6 +40,7 @@ body {
     margin-left: 9%;
     font-size: 19px;
     text-align: justify;
+    position: relative;
 }
 
 .foto-netflix {
@@ -36,10 +52,12 @@ body {
     font-size: 25px;
     margin-left: 350px;
     margin-top: 0;
+    position: relative;
 }
 
 .texto-netflix {
     margin-bottom: 0;
+    position: relative;
 }
 
 .trailer-texto {
@@ -50,6 +68,7 @@ body {
 .trailer-video {
     margin-top: 0;
     margin-left: 245px;
+    position: relative;
 }
 
 .rodape {
@@ -63,10 +82,20 @@ body {
     margin-left: 520px;
     padding: 20px 10px 0 10px;
     font-size: 20px;
+    position: relative;
 }
 
 .imagem-rodape {
     margin-left: 600px;
+    position: relative;
+}
+
+.form-adicionar-produtos {
+    position: relative;
+}
+
+.form-adicionar-venda {
+    position: relative;
 }
 
 .cabecalho-outros {
@@ -76,15 +105,14 @@ body {
     margin-bottom: 8px;
 }
 
+.valor-total {
+    margin-top: 50px;
+    margin-bottom: 0;
+}
 
-
-
-
-
-
-
-
-
+.lista-vendas {
+    background-color: white;
+}
 
 .imagem-estoque {
     width: 80px;

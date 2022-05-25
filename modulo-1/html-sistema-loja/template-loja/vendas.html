@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Adicionar Produto</title>
+</head>
+<body>
+    <header class="cabecalho-outros">
+
+    </header>
+    
+    <nav class="lista-navegacao-outros">
+        <a href="index.html">Página Inicial |</a>
+        <a href="ctrl-estoque.html">Controle de Estoque |</a>
+        <a href="add-produto.html">Adicionar Produto |</a>
+        <a href="funcionarios.html">Funcionários |</a>
+        <a href="vendas.html">Vendas |</a>
+    </nav>
+
+    
+    <h2>Adicionar produto ao carrinho do cliente</h2>
+    <form action="" class="form-adicionar-venda">
+            <label for="descricao">Nome do produto: </label>
+            <select name="select-produto">
+                <option value="volume1" selected>Volume 1</option>
+                <option value="volume2">Volume 2</option>
+                <option value="volume3">Volume 3</option>
+                <option value="volume4">Volume 4</option>
+                <option value="quadro">Quadro</option>
+            </select>
+            <br>
+            <label for="preco">Preço (em R$): </label>
+            <!-- Adicione o id apropriado e o type para receber números abaixo -->
+            <input type="number" id="preco" name="preço">
+            <br>
+            <!-- Preencha as propriedades necessárias para os elementos abaixo -->
+            <label for="quantidade-comprada">Quantidade: </label>
+            <input type="number" id="quantidade-comprada" name="quantidade-comprada">
+            <br>
+            <button type="submit">Adicionar a lista</button><br><br>
+            <table>
+                <tr>
+                    <th>Produtos</th>
+                    <th>Valores</th>
+                </tr>
+                <tr class="lista-vendas">
+                    <td>Volume 1</td>
+                    <td>49.90</td>
+                </tr>
+                <tr class="lista-vendas">
+                    <td>Quadro</td>
+                    <td>29.90</td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <label for="valor-total" class="valor-total">Valor total (em R$): </label>
+            <input type="number" id="valor-total" name="valor-total">
+            <br>
+            <label for="metodo-pagamento">Método de pagamento</label>
+            <select name="select-pagamento">
+                <option value="dinheiro" selected>Dinheiro</option>
+                <option value="cartao-credito">Crédito</option>
+                <option value="cartao-debito">Débito</option>
+                <option value="pix">Pix</option>
+              </select>
+            <br>
+            <br>
+            <button type="submit">Finalizar venda</button>
+            <br><br>
+    
+    </form>
+    <p class="lista-navegacao-outros">
+        <a href="historico-venda.html">Históricos de vendas</a>
+    </p>
+</body>
+</html>
