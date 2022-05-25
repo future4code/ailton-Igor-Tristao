@@ -1,0 +1,92 @@
+body {
+    background-color: #f8f8f8;
+}
+
+
+.cabecalho {
+    background-image: url("../img/titulo.jpg");
+    width: 520px;
+    height: 200px;
+    margin-left: 380px;
+    margin-bottom: 16px;
+}
+
+.lista-navegacao {
+    margin-left: 380px;
+
+}
+
+.bem-vindos {
+    margin-bottom: 0px;
+}
+
+.texto-pagina-inicial {
+    width: 80%;
+    margin-left: 9%;
+    font-size: 19px;
+    text-align: justify;
+}
+
+.foto-netflix {
+    margin-left: 210px;
+    margin-bottom: 0;
+}
+
+.titulo-netflix {
+    font-size: 25px;
+    margin-left: 350px;
+    margin-top: 0;
+}
+
+.texto-netflix {
+    margin-bottom: 0;
+}
+
+.trailer-texto {
+    margin-left: 350px;
+    margin-bottom: 0;
+}
+
+.trailer-video {
+    margin-top: 0;
+    margin-left: 245px;
+}
+
+.rodape {
+    background-image: url("../img/titulopequeno.jpg");
+    width: 100%;
+    height: 47px;
+    margin-bottom: 8px;
+}
+
+.texto-rodape {
+    margin-left: 520px;
+    padding: 20px 10px 0 10px;
+    font-size: 20px;
+}
+
+.imagem-rodape {
+    margin-left: 600px;
+}
+
+.cabecalho-outros {
+    background-image: url("../img/titulopequeno.jpg");
+    width: 100%;
+    height: 47px;
+    margin-bottom: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.imagem-estoque {
+    width: 80px;
+    height: 100px;
+}
