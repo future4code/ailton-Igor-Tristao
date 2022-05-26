@@ -17,8 +17,7 @@ html::before{
     background-image: url("../img/titulo.jpg");
     width: 520px;
     height: 200px;
-    margin-left: 380px;
-    margin-bottom: 16px;
+    margin: 0 auto;
 }
 
 .lista-navegacao {
@@ -68,7 +67,6 @@ html::before{
 .trailer-video {
     margin-top: 0;
     margin-left: 245px;
-    position: relative;
 }
 
 .rodape {
