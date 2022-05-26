@@ -2,16 +2,24 @@ body {
     background-color: #f8f8f8;
 }
 
-html::before{
+body::before{
     content: '';
     background-image: url("../img/wallpaper.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
     position: absolute;
     width: 100%;
-    height: 263%;
+    height: 258%;
     opacity: 0.2;    
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+PAGINA PRINCIPAL
+*/
 
 .cabecalho {
     background-image: url("../img/titulo.jpg");
@@ -21,37 +29,28 @@ html::before{
 }
 
 .lista-navegacao {
-    margin-left: 380px;
+    text-align: center;
     position: relative;
 }
 
-.lista-navegacao-outros {
-    position: relative;
+.lista-navegacao:hover {
+    grid-auto-flow: dense;
 }
 
-.bem-vindos {
-    margin-bottom: 0px;
-    position: relative;
-}
-
-.texto-pagina-inicial {
-    width: 80%;
-    margin-left: 9%;
+div>p {
     font-size: 19px;
     text-align: justify;
-    position: relative;
+    margin: 20px 90px;
 }
 
 .foto-netflix {
-    margin-left: 210px;
-    margin-bottom: 0;
+    width: 60%;
+    margin: 0 auto;
 }
 
 .titulo-netflix {
     font-size: 25px;
-    margin-left: 350px;
-    margin-top: 0;
-    position: relative;
+    text-align: center;
 }
 
 .texto-netflix {
@@ -60,33 +59,71 @@ html::before{
 }
 
 .trailer-texto {
-    margin-left: 350px;
+    text-align: center;
+    margin-top: 40px;
     margin-bottom: 0;
 }
 
 .trailer-video {
     margin-top: 0;
-    margin-left: 245px;
+    text-align: center;
+    position: relative;
+}
+
+.redes-sociais {
+    padding: 10px 10px 0 10px;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    margin: 0;
 }
 
 .rodape {
     background-image: url("../img/titulopequeno.jpg");
     width: 100%;
     height: 47px;
-    margin-bottom: 8px;
 }
 
-.texto-rodape {
-    margin-left: 520px;
-    padding: 20px 10px 0 10px;
-    font-size: 20px;
+
+/*
+PAGINA CONTROLE ESTOQUE
+*/
+
+.imagem-estoque {
+    width: 130px;
+    height: 150px;
+}
+
+.div-titulo-tabela {
+    width: 36%;
+}
+
+.titulo-estoque {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.tabela-estoque {
     position: relative;
 }
 
-.imagem-rodape {
-    margin-left: 600px;
-    position: relative;
+tr>th {
+    border: 1px solid black;
 }
+
+tr>td {
+    border: 1px solid black;
+}
+
+tr, th, td {
+    width: 100px;
+    text-align: center;
+}
+
+/*
+PAGINA ADICIONAR PRODUTOS
+*/
+
 
 .form-adicionar-produtos {
     position: relative;
@@ -103,6 +140,11 @@ html::before{
     margin-bottom: 8px;
 }
 
+.lista-navegacao-outros {
+    margin: 25px 0;
+    position: relative;
+}
+
 .valor-total {
     margin-top: 50px;
     margin-bottom: 0;
@@ -112,7 +154,3 @@ html::before{
     background-color: white;
 }
 
-.imagem-estoque {
-    width: 80px;
-    height: 100px;
-}
