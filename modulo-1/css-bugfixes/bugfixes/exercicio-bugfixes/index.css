@@ -28,6 +28,14 @@ input {
     border-right: 0;
 }
 
+input:hover {
+    opacity: 0.3;
+}
+
+input:active {
+    opacity: 1;
+}
+
 button:focus {
     color: white;
 }
@@ -69,7 +77,6 @@ div img {
 .container {
     height: 500px;
     text-align: center;
-    
 }
 
 .icone {
