@@ -8,7 +8,7 @@ body::before{
     background-size: auto;
     position: absolute;
     width: 100%;
-    height: 258%;
+    height: 263%;
     opacity: 0.2;    
 }
 
@@ -20,6 +20,16 @@ body::before{
 /*
 PAGINA PRINCIPAL
 */
+
+@font-face {
+    font-family: Heavytrip;
+    src: url(../font/Heavytrip.ttf);
+}
+
+a[href="index.html"], a[href="ctrl-estoque.html"], a[href="add-produto.html"], a[href="funcionarios.html"], a[href="vendas.html"], a[href="historico-venda.html"] {
+    font-family: 'Heavytrip';
+    color: rgb(67, 104, 126)
+}
 
 .cabecalho {
     background-image: url("../img/titulo.jpg");
@@ -41,16 +51,19 @@ div>p {
     font-size: 19px;
     text-align: justify;
     margin: 20px 90px;
+    position: relative;
 }
 
 .foto-netflix {
     width: 60%;
     margin: 0 auto;
+    border: 10px dotted pink;
 }
 
 .titulo-netflix {
     font-size: 25px;
     text-align: center;
+    margin-top: 10px
 }
 
 .texto-netflix {
@@ -143,6 +156,7 @@ PAGINA ADICIONAR PRODUTOS
 .lista-navegacao-outros {
     margin: 25px 0;
     position: relative;
+    margin-left: 10px;
 }
 
 .valor-total {
