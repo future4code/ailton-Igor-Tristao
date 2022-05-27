@@ -1,0 +1,170 @@
+body {
+    background-color: #f8f8f8;
+}
+
+body::before{
+    content: '';
+    background-image: url("../img/wallpaper.jpg");
+    background-size: auto;
+    position: absolute;
+    width: 100%;
+    height: 263%;
+    opacity: 0.2;    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+PAGINA PRINCIPAL
+*/
+
+@font-face {
+    font-family: Heavytrip;
+    src: url(../font/Heavytrip.ttf);
+}
+
+a[href="index.html"], a[href="ctrl-estoque.html"], a[href="add-produto.html"], a[href="funcionarios.html"], a[href="vendas.html"], a[href="historico-venda.html"] {
+    font-family: 'Heavytrip';
+    color: rgb(67, 104, 126)
+}
+
+.cabecalho {
+    background-image: url("../img/titulo.jpg");
+    width: 520px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.lista-navegacao {
+    text-align: center;
+    position: relative;
+}
+
+.lista-navegacao:hover {
+    grid-auto-flow: dense;
+}
+
+div>p {
+    font-size: 19px;
+    text-align: justify;
+    margin: 20px 90px;
+    position: relative;
+}
+
+.foto-netflix {
+    width: 60%;
+    margin: 0 auto;
+    border: 10px dotted pink;
+}
+
+.titulo-netflix {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 10px
+}
+
+.texto-netflix {
+    margin-bottom: 0;
+    position: relative;
+}
+
+.trailer-texto {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+.trailer-video {
+    margin-top: 0;
+    text-align: center;
+    position: relative;
+}
+
+.redes-sociais {
+    padding: 10px 10px 0 10px;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    margin: 0;
+}
+
+.rodape {
+    background-image: url("../img/titulopequeno.jpg");
+    width: 100%;
+    height: 47px;
+}
+
+
+/*
+PAGINA CONTROLE ESTOQUE
+*/
+
+.imagem-estoque {
+    width: 130px;
+    height: 150px;
+}
+
+.div-titulo-tabela {
+    width: 36%;
+}
+
+.titulo-estoque {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.tabela-estoque {
+    position: relative;
+}
+
+tr>th {
+    border: 1px solid black;
+}
+
+tr>td {
+    border: 1px solid black;
+}
+
+tr, th, td {
+    width: 100px;
+    text-align: center;
+}
+
+/*
+PAGINA ADICIONAR PRODUTOS
+*/
+
+
+.form-adicionar-produtos {
+    position: relative;
+}
+
+.form-adicionar-venda {
+    position: relative;
+}
+
+.cabecalho-outros {
+    background-image: url("../img/titulopequeno.jpg");
+    width: 100%;
+    height: 47px;
+    margin-bottom: 8px;
+}
+
+.lista-navegacao-outros {
+    margin: 25px 0;
+    position: relative;
+    margin-left: 10px;
+}
+
+.valor-total {
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+.lista-vendas {
+    background-color: white;
+}
+
