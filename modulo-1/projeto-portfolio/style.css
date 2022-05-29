@@ -1,0 +1,533 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Secular;
+    src: url(../font/secular.ttf);
+}
+
+@font-face {
+    font-family: sansbold;
+    src: url(../font/sansbold.ttf);
+}
+
+.index-body::before{
+    content: '';
+    background-image: url("../img/wallpaper2.jpg");
+    background-size: auto;
+    opacity: 0.7;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;    
+}
+
+.navegacao {            /* BOTOES INICIO SOBRE MIM PROJETO */
+    font-family: 'Secular';
+    color: black;
+    text-decoration: 0;
+    margin-left: 20px;
+    padding: 0 4px 0 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+.navegacao:hover {
+    background-color: rgb(199, 88, 88);
+    color: white;
+    border-radius: 20%;
+    border: 1px solid black;
+    opacity: 1;
+}
+
+.portugues {
+    position: relative;
+}
+
+hr {
+    margin: 8px 450px;
+    border-top: 2px solid rgba(0, 0, 0, 0.39);
+}
+
+hr.footer {
+    margin-bottom: 0px;
+    margin-top: 50px;
+}
+
+.div-tela-inteira {                 /* DIV TELA INTEIRA */
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+}
+
+.lista-navegacao {                  /* DIV BOTOES INICIO SOBRE MIM PROJETO */ 
+    position: relative;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.idiomas {
+    text-align: center;
+    position: relative;
+}
+
+.circle-image {                     /* DIV IMAGEM BZERKA */
+    display: inline-block;
+    object-fit: cover;
+    width: 100%;
+    height: 180px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.circle-image img {                 /* IMAGEM BZERKA */
+    border-radius: 50%;
+    width: 14%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    border: 2px solid black;
+    box-shadow: 1px 2px 8px 1px rgba(236, 0, 0, 0.7);
+}
+
+.texto-home {                        /* TEXTO PAGINA PRINCIPAL */
+    margin-top: 20px;
+    height: 32vh;
+    text-align: center;
+}
+
+.texto-home>p {
+    font-size: 30px;
+    padding-top: 20px;
+    color: black;
+    text-shadow: 0.1em 0.1em 0.2em black;
+    
+}
+.redes-sociais {                     /* ICONES REDES SOCIAIS */
+    color: white;
+    padding: 10px 10px 0 10px;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.link:hover {
+    width: 30px;
+    border: 1px solid black;
+}
+
+
+
+/*
+pagina sobre mim
+*/
+
+.aboutpt-body::before{
+    content: '';
+    background-color: aliceblue;
+    background-size: auto;
+    opacity: 0.7;
+    position: absolute;
+    width: 100vw;
+    height: 155vh;    
+}
+
+.aboutpt-body {
+    position: absolute; 
+    width: 100vw;
+    height: 155vh;
+    border: 1px solid red;
+    font-family: 'sansbold';
+}
+
+.circle-image-2 {                               /* DIV IMAGEM BZERKA */
+    display: inline-flex;
+    box-shadow: 1px 2px 8px 1px rgb(0 0 0 / 40%);
+    object-fit: cover;
+    width: 50%;
+    height: 30%;
+    position: absolute;
+    margin-left: 25%;
+    margin-top: 1%;
+}
+
+.circle-image-2 img {                           /*IMAGEM BZERKA */
+    border-radius: 50%;
+    width: 25%;
+    height: 97%;
+    border: 2px solid rgb(255, 255, 255);
+    display: inline;    
+    position: relative;
+    left: 2%;
+}
+
+.texto-sobre-mim {                              /*texto sobre mim */
+    position: relative;
+    display: inline-flex;
+    height: 28%;
+    left: 40%;
+    width: 30%;
+    margin-top: 2%;
+    padding-top: 10px;
+    text-align: justify;
+    text-indent: 1em;
+
+}
+
+.div-habilidades {
+    position: relative;
+    top: 6%;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 8px;
+    text-shadow: 0.1em 0.1em 0.2em rgb(236, 116, 116);
+}
+
+
+.div-icones {
+    background-color: rgb(236, 116, 116);
+    position: relative;
+    top: 10%;
+    padding-top: 10px;  
+}
+
+.div-icones-text {
+    background-color: rgb(236, 116, 116);
+    position: relative;
+    top: 10%;
+    width: 100vw;
+    display: inline-flex;
+}
+
+.div-icones-text>div>p {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+
+}
+
+.html-icone {                                    /*ICONES HABILIDADE HTML*/
+    position: relative;
+    display: inline-flex;
+    margin: 5px 0 0 5px;
+    left: 12%;
+    top: 0;
+    box-shadow: 8px 4px 4px rgb(216, 184, 184);
+}
+
+.html-text {                                    /*TEXTO HTML */
+    position: relative;
+    margin: 5px 0 0 25px;
+    height: 70px;  
+    width: 18%;
+    left: 5%;
+}
+
+.css-icone {                                     /*ICONE CSS */
+    position: relative;
+    display: inline-flex;
+    margin: 5px 0 0 5px;
+    left: 25.5%;
+    box-shadow: 8px 4px 4px rgb(216, 184, 184);
+}
+
+.css-text {
+    position: relative;
+    margin: 5px 0 0 5px;
+    height: 70px;
+    width: 18%;
+    left: 8%;
+    text-align: justify;
+}
+
+.js-icone {                                     /*ICONE CSS */
+    position: relative;
+    display: inline-flex;
+    margin: 5px 0 0 5px;
+    left: 38%;
+    box-shadow: 8px 4px 4px rgb(216, 184, 184);
+}
+
+.js-text {
+    position: relative;
+    margin: 5px 0 0 5px;
+    height: 70px;
+    width: 18%;
+    left: 11%;
+    text-align: justify;
+}
+
+.react-icone {
+    position: relative;
+    display: inline-flex;
+    margin: 5px 0 0 5px;
+    left: 51%;
+    box-shadow: 8px 4px 4px rgb(216, 184, 184);
+}
+
+.react-text {
+    position: relative;
+    margin: 5px 0 0 5px;
+    height: 100px;
+    width: 18%;
+    left: 14%;
+    text-align: justify;
+}
+
+.div-cursos {                                         /* CURSOS E CERTIFICADOS TEXTO*/
+    position: relative;
+    top: 15%;
+    text-align: center;
+    width: 100%;
+    height: 5%;
+    text-shadow: 0.1em 0.1em 0.2em rgb(236, 116, 116);
+}
+
+.div-cursos>p {                                       /*titulo habilidades */
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.div-cursos-icone-text {                              /* DIV LABENU E INGLES */
+    padding: 10px 0;
+    position: relative;
+    height: 200px;
+    top: 18%;
+    text-align: center;
+}
+    
+.div-cursos-labenu {                                    /*DIV CURSO LABENU */
+    box-shadow: 1px 2px 8px 1px rgba(236, 0, 0, 0.7);
+    background-color: rgb(236, 116, 116);
+    position: relative;
+    display: inline-flex;
+    width: 35%;
+    height: 100%;
+    justify-content: center;
+}
+
+.labenu-imagem {                                        /* IMAGEM LABENU */
+    position: relative;
+    display: inline;
+    height: 35%;
+    width: 13%;
+    border-radius: 50%;
+    left: 32%;
+    padding-top: 5px;
+}
+
+.labenu-text {                                          /* TEXTO LABENU */
+    position: relative;
+    display: inline;
+    height: 50%;
+    width: 300px;
+    top: 50%;
+    left: -6%;
+    color: white;
+}
+
+.div-cursos-ingles {
+    background-color: rgb(236, 116, 116);
+    box-shadow: 1px 2px 8px 1px rgba(236, 0, 0, 0.7);
+    position: relative;
+    display: inline-flex;
+    width: 35%;
+    height: 100%;
+    margin-left: 3%;
+}
+
+.ingles-imagem {
+    padding-top: 5px;
+    position: relative;
+    display: inline;
+    height: 35%;
+    width: 13%;
+    border-radius: 50%;
+    left: 40%;
+}
+
+.ingles-text {
+    position: relative;
+    display: inline;
+    height: 50%;
+    width: 300px;
+    top: 45%;
+    left: 3%;
+    color: white;
+}
+
+.redes-sociais-about {
+    position: relative;
+    text-align: center;
+    top: 20%;
+}
+
+.footer-about {
+    position: relative;
+    top: 20%;
+}
+
+                                        /* 
+                                        PAGINA WORK
+                                        */
+
+
+.work-body {
+    background-color: antiquewhite;
+    font-family: sans-serif;
+}
+
+.work-title {
+    border: 1px solid rgb(236, 116, 116);
+    text-align: center;
+    font-size: 50px;
+    width: 40%;
+    border-radius: 5%;
+    margin-top: 1%;
+    margin-left: 30%;
+    box-shadow: 1px 2px 8px 1px rgba(236, 0, 0, 0.7);
+    background-color: rgb(236, 116, 116);
+    text-shadow: 0.1em 0.1em 0.2em black;
+    padding-bottom: 2px;
+}
+
+.mais-info {
+    text-align: center;
+    position: relative;
+    /* margin-top: 20px; */
+    width: 20%;
+    margin-left: 40%;
+    box-shadow: 1px 2px 8px 1px rgba(236, 0, 0, 0.7);
+    background-color: rgb(236, 116, 116);
+    /* text-shadow: 0.1em 0.1em 0.2em black; */
+    border-radius: 2%;
+    border-top: 0;
+    
+}
+
+.div-projetos {                             
+    position: absolute;
+    height: 45%;
+    top: 28%;
+    width: 100%;
+    text-align: center; 
+}
+    
+.projeto-loja {                                    
+    box-shadow: 1px 2px 8px 1px rgba(236, 0, 0, 0.7);
+    background-color: rgb(236, 116, 116);
+    position: relative;
+    display: inline-flex;
+    width: 20%;
+    height: 100%;
+    left: -10%;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.div-projetos>div>a>img {
+    position: relative;
+    display: inline;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    
+}
+
+.projeto-blackjack {
+    background-color: rgb(236, 116, 116);
+    box-shadow: 1px 2px 8px 1px rgba(236, 0, 0, 0.7);
+    position: relative;
+    display: inline-flex;
+    width: 20%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    border-radius: 50%;
+}
+
+.projeto-moretocome {
+    background-color: rgb(236, 116, 116);
+    box-shadow: 1px 2px 8px 1px rgba(236, 0, 0, 0.7);
+    position: relative;
+    display: inline-flex;
+    width: 20%;
+    height: 100%;
+    top: 0%;
+    left: 10%;
+    border-radius: 50%;
+}
+
+.projeto-texto {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    top: 75%;
+}
+.projeto-texto>div {
+    position: relative;
+    display: inline-flex;
+    width: 20%;
+    height: 100%;
+    margin-left: 9.5%;
+    text-align: justify;
+    font-size: 18px;
+    text-indent: 1em;
+}
+
+.redes-sociais-work {
+    position: relative;
+    text-align: center;
+    top: 80%;
+}
+
+.footer-work {
+    position: relative;
+    top: 80%;
+}
+
+.contact-body {
+    background-color: antiquewhite;
+    font-family: sans-serif;
+}
+
+.enviar-email {
+    position: absolute;
+    top: 30%;
+    width: 36%;
+    margin-left: 33%;
+    text-align: center;
+    height: 36%;
+    padding: 10px;
+    font-size: 50px;
+    box-shadow: 1px 2px 8px 1px rgb(0 0 0 / 15%);
+    background-color: antiquewhite;
+}
+
+.botao-contato {
+    font-family: 'Secular';
+    color: black;
+    text-decoration: 0;
+    opacity: 0.8;
+}
+
+
+.redes-sociais-contact {
+    position: relative;
+    text-align: center;
+    top: 80%;
+}
+
+.footer-contact {
+    position: relative;
+    top: 80%;
+}
+
+.navegacao-vermelho {
+    color: red;
+}
