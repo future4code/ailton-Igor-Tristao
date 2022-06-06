@@ -1,7 +1,11 @@
 import React from 'react';
 import logo from './youtubelogo.jpg';
 import logomenu from './iconemenu.png';
-import lupa from './lupa.jpg';
+import lupa from './lupa.png';
+import perfil from './perfil.jpg';
+import mic from './iconemic.jpg';
+import casinha from './casa.png';    
+import bussola from './bussola.jpg'
 import './App.css';
 
 function App() {
@@ -16,26 +20,41 @@ function App() {
         <div className="tela-inteira">
         <header>
             <div className="header-logos">
-            <img src={logomenu} alt="logo-menu" width="32px" />
-            <img src={logo} alt="logo" width="120px" /> 
+                <img src={logomenu} alt="logo-menu" width="32px" />
+                <img src={logo} alt="logo" width="120px" /> 
             </div>
-            <input type="text" placeholder="Pesquisar" id="campoDeBusca" />
-            <img src={lupa} alt="lupa" width="50px"/>
-            <div>
-                abc
+            <div className="div-campodebusca">
+                <input type="text" placeholder="Pesquisar" id="campoDeBusca" />
+                <img src={lupa} alt="lupa" width="40px" height="30px"/> 
+                <img src={mic} alt="microfone" width="50px" height="40px"/>
+            </div>
+            <div className="div-imagem-perfil">
+                <img src={perfil} alt="foto-perfil" width="50px" />
             </div>
         </header>
 
         <main>
             <nav className="menu-vertical">
-                <ul>
-                    <li className="botoes-meunu-vertical">Início</li>
-                    <li className="botoes-meunu-vertical">Em alta</li>
-                    <li className="botoes-meunu-vertical">Inscrições</li>
-                    <hr />
-                    <li className="botoes-meunu-vertical">Originais</li>
-                    <li className="botoes-meunu-vertical">Histórico</li>
-                </ul>
+                <div className="div-icones-navegacao">
+                    <img src={casinha} alt="casinha" width="30px" />
+                    <p>Início</p>
+                </div>
+                <div className="div-icones-navegacao">
+                    <img src={casinha} alt="bussola" width="30px" />
+                    <p>Explorar</p>
+                </div>
+                <div className="div-icones-navegacao">
+                    <img src={casinha} alt="casinha" width="30px" />
+                    <p>Shorts</p>
+                </div>
+                <div className="div-icones-navegacao">
+                    <img src={casinha} alt="casinha" width="30px" />
+                    <p>Inscrições</p>
+                </div>
+                <div className="div-icones-navegacao">
+                    <img src={casinha} alt="casinha" width="30px" />
+                    <p>Biblioteca</p>
+                </div>
             </nav>
 
             <section className="painel-de-videos">
@@ -74,9 +93,9 @@ function App() {
             </section>
         </main>
 
-        <footer>
+        {/* <footer>
             <h4>Oi! Eu moro no footer!</h4>
-        </footer>
+        </footer> */}
     </div>
       </div>
   );

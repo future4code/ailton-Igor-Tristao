@@ -16,32 +16,75 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 25px;
-  height: 16%;
+  height: 18%;
 }
 
 .header-logos {
   display: flex;
-  gap: 20px;
+  gap: 25px;
+}
+
+.div-imagem-perfil>img {  
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-right: 20px;
+
+}
+
+.div-campodebusca {
+  width: 55%;
+  display: flex;
+  height: 73%;
+  align-items: center;
+}
+
+.div-campodebusca>img {
+  display: flex;
+  margin: 0 20px 0 15px; 
+  border-radius: 50%;
+}
+
+.div-icones-navegacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 84px;
+  padding: 8px;
+}
+
+.div-icones-navegacao:hover {
+  background-color: #383838;
+}
+
+.div-icones-navegacao>p {
+  color: white;
+  margin-top: 4px;
+  font-size: 12px;
 }
 
 #campoDeBusca {
   background-color: #121212;
-  height: 58%;
-  width: 38%;
+  width: 73%;
+  height: 80%;
   border: 1px solid #30302e;
   font-size: 18px;
   padding: 5px;
+  margin-right: 10px;
 }
 
 main {
   min-height: 80%;
   display: flex;
+  background-color: #181818;
 }
 
 .menu-vertical {
-  flex-basis: 200px;
-  border-right-style: solid;
-  border-right-width: thin;
+  width: 100px;
+  /* border-right-style: solid;
+  border-right-width: thin; */
+  background-color: #282828;
 }
 
 .botoes-meunu-vertical {
