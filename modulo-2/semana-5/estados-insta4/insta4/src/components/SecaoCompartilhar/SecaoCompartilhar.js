@@ -31,20 +31,20 @@ export class SecaoCompartilhar extends Component {
 
     aoClicarFacebook = () => {
         this.setState({
-          mensagem: console.log(`Post compartilhado no Facebook com a mensagem: ${this.state.comentario}`),
-        })
+          mensagem: console.log(`Post compartilhado no Facebook com a mensagem: ${this.state.comentario}`)})
+        this.setState({comentario: ""})
     }
     
     aoClicarInstagram = () => {
         this.setState({
-          mensagem: console.log(`Post compartilhado no Instagram com a mensagem: ${this.state.comentario}`),
-        })
+          mensagem: console.log(`Post compartilhado no Instagram com a mensagem: ${this.state.comentario}`)})
+          this.setState({comentario: ""})
     }
     
     aoClicarTwitter = () => {
         this.setState({
-          mensagem: console.log(`Post compartilhado no Twitter com a mensagem: ${this.state.comentario}`),
-        })
+          mensagem: console.log(`Post compartilhado no Twitter com a mensagem: ${this.state.comentario}`)})
+          this.setState({comentario: ""})
     }
 
 	render() {
