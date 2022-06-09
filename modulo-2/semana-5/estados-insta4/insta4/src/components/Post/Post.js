@@ -123,8 +123,6 @@ class Post extends React.Component {
       componenteCompartilhar = <SecaoCompartilhar />
     }
 
-    
-
     let componenteComentario
     
     if(this.state.comentando) {

@@ -14,7 +14,7 @@ const InputComentario = styled.input`
 
 export class SecaoComentario extends Component {
 	state = {
-		comentario: ""
+		comentario: "",
 	};
 
 	onChangeComentario = (event) => {

@@ -41,11 +41,11 @@ class App extends React.Component {
         nomeUsuario: "carlinhos",
         fotoUsuario: "https://picsum.photos/30",
         fotoPost: "https://picsum.photos/10"
-        }
+        },
     ],
     valorInputNome: "",
     valorInputFoto: "",
-    valorInputFotoPost: ""
+    valorInputFotoPost: "",
   }
 
   adicionarPost = () => {
@@ -95,11 +95,11 @@ class App extends React.Component {
           </div>
           <div>
             <p>Foto Usuario</p>
-            <input value={this.state.valorInputFoto} onChange={this.onChangeInputFotoPerfil} placeholder="Foto Perfil"/>
+            <input value={this.state.valorInputFoto} onChange={this.onChangeInputFotoPerfil} placeholder="Link foto do perfil"/>
           </div>
           <div>
             <p>Foto Post</p>
-            <input value={this.state.valorInputFotoPost} onChange={this.onChangeInputFotoPost} placeholder="Foto Post"/>
+            <input value={this.state.valorInputFotoPost} onChange={this.onChangeInputFotoPost} placeholder="Link foto do post"/>
           </div>
           <Button onClick={this.adicionarPost}>Adicionar Post</Button>
         </PostContainer>
