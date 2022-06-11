@@ -11,10 +11,11 @@ const ComentarioContainer = styled.div`
             return "row"
         }
     }};
+    
 `
 
-const Comentarios = styled.div`
-    padding: 0.9em 0.8em;
+const Comentarios = styled.div`            // div dos balões
+    padding: 0.6em 0.8em;
     border-radius: 0.5em;
     font-weight: 450;
     line-height: 1.3;
@@ -35,7 +36,7 @@ const Comentarios = styled.div`
     margin: 0 20px;
 `
 
-const NomeUsuario = styled.div`
+const NomeUsuario = styled.div`         // div balão do nome usuario
     color: #9AAC8C;
     font-size: 1em;
     font-weight: 600;
@@ -51,7 +52,7 @@ const NomeUsuario = styled.div`
     }
 `
 
-const MensagemUsuario = styled.div`
+const MensagemUsuario = styled.div`            //div balão das mensagens
     &:after {
 	content: '';
 	border: 15px solid transparent;

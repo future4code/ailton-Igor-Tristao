@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import SecaoComentario from './componentes/SecaoComentario/SecaoComentario';
+import Cabecalho from './componentes/Cabecalho/Cabecalho';
 import React from 'react';
+import img from './img/background.jpg'
 
 const Container = styled.div`
   display: flex;
@@ -10,16 +12,24 @@ const Container = styled.div`
   height: 100vh;
 `
 
-const MainContainer = styled.div`
+const MainContainer = styled.div`        // div de todo o conteudo
   height: 100vh;
   width: 40%;
   display: flex;
   flex-direction: column;
-  background-color: #B0C4DE;
-  border: 1px solid black;
+  border: 1px solid #f1f2f6;
+  &:before{
+    content: '';
+    background-image: url(${img});
+    background-size: auto;
+    opacity: 0.9;
+    position: absolute;
+    width: 40%;
+    height: 99vh;
+  }
 `
 
-const ComentariosContainer = styled.div`
+const ComentariosContainer = styled.div`   //div dos comentarios
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -28,14 +38,16 @@ const ComentariosContainer = styled.div`
   padding: 20px;  
 `
 
-const InputsContainer = styled.div`
+const InputsContainer = styled.div`          // div dos inputs+botão
   height: 10%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
+  background-color: #f1f2f7;
 `
 
-const Button = styled.button`
+const Button = styled.button`          //botão
   height: 64%;
   width: 12%;
   font-size: 18px;
@@ -44,7 +56,7 @@ const Button = styled.button`
   background-color: white;
 `
 
-const InputUsuario = styled.input`
+const InputUsuario = styled.input`       //input do usuario
   height: 50%;
   width: 90px;
   font-size: 19px;
@@ -53,7 +65,7 @@ const InputUsuario = styled.input`
   padding: 4px;
 `
 
-const InputMensagem = styled.input`
+const InputMensagem = styled.input`       //input das mensagens
   height: 50%;
   width: 64%;
   font-size: 19px;
@@ -64,11 +76,8 @@ const InputMensagem = styled.input`
 
 document.addEventListener("keypress", function(e) {
   if(e.key === 'Enter') {
-  
       var btn = document.querySelector("#submit");
-    
     btn.click();
-  
   }
 });
 
@@ -114,12 +123,15 @@ class App extends React.Component {
   return (
     <Container>
         <MainContainer>
+          <Cabecalho>
+            
+          </Cabecalho>
           <ComentariosContainer>
              {componenteComentario}
           </ComentariosContainer>
           <InputsContainer> 
-            <InputUsuario value={this.state.valorInputNomeUsuario} onChange={this.onChangeInputNomeUsuario} placeholder='Usuário'/>
-            <InputMensagem value={this.state.valorInputMensagemUsuario} onChange={this.onChangeInputMensagemUsuario} placeholder='Mensagem'/>
+            <InputUsuario value={this.state.valorInputNomeUsuario} onChange={this.onChangeInputNomeUsuario} placeholder=' Usuário'/>
+            <InputMensagem value={this.state.valorInputMensagemUsuario} onChange={this.onChangeInputMensagemUsuario} placeholder='  Mensagem'/>
             <Button onClick={this.adicionarComentario} id="submit"><strong>Enviar</strong></Button>
           </InputsContainer>
         </MainContainer>
