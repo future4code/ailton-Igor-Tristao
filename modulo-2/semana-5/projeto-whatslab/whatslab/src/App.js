@@ -4,7 +4,7 @@ import Cabecalho from './componentes/Cabecalho/Cabecalho';
 import React from 'react';
 import img from './img/background.jpg'
 
-const Container = styled.div`
+const Container = styled.div`           //div da pagina inteira
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -74,7 +74,7 @@ const InputMensagem = styled.input`       //input das mensagens
   padding: 4px;
 `
 
-document.addEventListener("keypress", function(e) {
+document.addEventListener("keypress", function(e) {      //função enviar mensagem ENTER
   if(e.key === 'Enter') {
       var btn = document.querySelector("#submit");
     btn.click();
@@ -133,8 +133,7 @@ class App extends React.Component {
   return (
     <Container>
         <MainContainer>
-          <Cabecalho>
-          </Cabecalho>
+          <Cabecalho />
           <ComentariosContainer>
              {componenteComentario}
           </ComentariosContainer>

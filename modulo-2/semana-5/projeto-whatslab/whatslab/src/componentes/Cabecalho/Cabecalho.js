@@ -41,7 +41,7 @@ class Cabecalho extends React.Component {
         return(
         <ContainerCabecalho>
             <ContainerImagem>
-                <Imagem src="https://pbs.twimg.com/profile_images/1413183413322928134/IQQZwt7g_400x400.jpg" alt="imagem-grupo"/>
+                <Imagem src="https://pbs.twimg.com/profile_images/1413183413322928134/IQQZwt7g_400x400.jpg" alt="logo-labenu"/>
             </ContainerImagem>
             <ContainerTexto>
                 <ContainerNomeDoGrupo>Labenu - Ailton</ContainerNomeDoGrupo>
