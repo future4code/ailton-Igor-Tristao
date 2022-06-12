@@ -50,7 +50,7 @@ const InputsContainer = styled.div`          // div dos inputs+botão
 const Button = styled.button`          //botão
   height: 64%;
   width: 12%;
-  font-size: 18px;
+  font-size: 16px;
   border: none;
   border-radius: 4px;
   background-color: white;
@@ -58,8 +58,8 @@ const Button = styled.button`          //botão
 
 const InputUsuario = styled.input`       //input do usuario
   height: 50%;
-  width: 90px;
-  font-size: 19px;
+  width: 80px;
+  font-size: 17px;
   border: none;
   border-radius: 4px;  
   padding: 4px;
@@ -68,7 +68,7 @@ const InputUsuario = styled.input`       //input do usuario
 const InputMensagem = styled.input`       //input das mensagens
   height: 50%;
   width: 64%;
-  font-size: 19px;
+  font-size: 17px;
   border: none;
   border-radius: 4px;
   padding: 4px;
@@ -109,13 +109,23 @@ class App extends React.Component {
     this.setState({ valorInputMensagemUsuario: event.target.value });
   };
   
+  removerComentario = (id) => {
+    if(window.confirm('Deseja deletar esta mensagem?')) {
+      const novoArray = this.state.comentario.filter((pessoa, index) => {
+        return id !== index
+      })
+      this.setState({comentario: novoArray})
+    }
+  } 
+
   render() {
 
-    const componenteComentario = this.state.comentario.map((comentario) => {
+    const componenteComentario = this.state.comentario.map((comentario, index) => {
       return(
-        <SecaoComentario key="index"  
-        nomeUsuario={comentario.nomeUsuario}
+        <SecaoComentario
+        nomeUsuario={comentario.nomeUsuario}  
         mensagemUsuario={comentario.mensagemUsuario}
+        remover={() => this.removerComentario(index)}
         />
       );
     });
@@ -124,7 +134,6 @@ class App extends React.Component {
     <Container>
         <MainContainer>
           <Cabecalho>
-            
           </Cabecalho>
           <ComentariosContainer>
              {componenteComentario}

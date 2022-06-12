@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const ContainerCabecalho = styled.div`
-    height: 80px;
+    height: 72px;
     display: flex;
     position: relative;
     background-color: #f1f2f6;
@@ -23,17 +23,17 @@ const ContainerTexto = styled.div`
 `
 
 const ContainerNomeDoGrupo = styled.div`
-    font-size: 20px;
+    font-size: 18px;
 `   
 
 const ContainerMembrosGrupo = styled.div`
     color: #6f7a76;
-    font-size: 17px;
+    font-size: 14px;
 `
 
 const Imagem = styled.img`
     border-radius: 50%;
-    width: 50px;
+    width: 45px;
 `
 
 class Cabecalho extends React.Component {
@@ -45,7 +45,7 @@ class Cabecalho extends React.Component {
             </ContainerImagem>
             <ContainerTexto>
                 <ContainerNomeDoGrupo>Labenu - Ailton</ContainerNomeDoGrupo>
-                <ContainerMembrosGrupo>Daniel, Giovanna, Joclelson, Lincoln, +351 917 796 660, +55 11 94339-0555...</ContainerMembrosGrupo>
+                <ContainerMembrosGrupo>Daniel, Giovanna, Joclelson, Lincoln, +351 917 796 660...</ContainerMembrosGrupo>
             </ContainerTexto>
         </ContainerCabecalho>
   )}

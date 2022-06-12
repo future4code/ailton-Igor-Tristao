@@ -11,7 +11,7 @@ const ComentarioContainer = styled.div`
             return "row"
         }
     }};
-    
+    position: relative;
 `
 
 const Comentarios = styled.div`            // div dos balões
@@ -21,7 +21,7 @@ const Comentarios = styled.div`            // div dos balões
     line-height: 1.3;
     display: flex;
     flex-direction: column;
-    font-size: 20px;
+    font-size: 16px;
     max-width: 60%;
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
     word-wrap: break-word;  
@@ -66,10 +66,11 @@ const MensagemUsuario = styled.div`            //div balão das mensagens
 
 class SecaoComentario extends React.Component {
   render() {
+
     const nome = this.props.nomeUsuario.toLowerCase()
     if(nome === "eu") {
         return (
-            <ComentarioContainer tipo="eu">
+            <ComentarioContainer tipo="eu" onDoubleClick={this.props.remover}>
                 <Comentarios tipo="eu">
                     <MensagemUsuario>{this.props.mensagemUsuario}</MensagemUsuario>
                 </Comentarios>
@@ -78,7 +79,7 @@ class SecaoComentario extends React.Component {
     }
     else {
         return (
-            <ComentarioContainer tipo="outro">
+            <ComentarioContainer tipo="outro" onDoubleClick={this.props.remover}>
               <Comentarios tipo="outro">
                   <NomeUsuario><b>{this.props.nomeUsuario}</b></NomeUsuario>
                   {this.props.mensagemUsuario}
