@@ -95,7 +95,8 @@ class listaUsuarios extends React.Component {
 
   voltarBusca = () => {
     this.setState({ buscando: !this.state.buscando})
-    this.setState({ inputBuscar: ""})
+    this.setState({ inputBuscar: ""})   
+    this.setState({ usuariosProcurados: []})
   }
 
   render() {
