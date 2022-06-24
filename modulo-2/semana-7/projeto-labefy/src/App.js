@@ -1,150 +1,154 @@
-import styled from 'styled-components';
-import SecaoComentario from './componentes/SecaoComentario/SecaoComentario';
-import Cabecalho from './componentes/Cabecalho/Cabecalho';
-import React from 'react';
-import img from './img/background.jpg'
+import React from "react";
+import "./App.css";
+import styled from "styled-components";
+import Menu from "./Components/Menu";
+import Inicio from "./Components/Inicio";
+import axios from "axios";
+import ListaPlaylists from "./Components/ListaPlaylists";
+import AbrirPlaylist from "./Components/AbrirPlaylist";
 
-const Container = styled.div`           //div da pagina inteira
+const Container = styled.div`
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-`
-
-const MainContainer = styled.div`        // div de todo o conteudo
-  height: 100vh;
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #f1f2f6;
-  &:before{
-    content: '';
-    background-image: url(${img});
-    background-size: auto;
-    opacity: 0.9;
-    position: absolute;
-    width: 40%;
-    height: 99vh;
-  }
-`
-
-const ComentariosContainer = styled.div`   //div dos comentarios
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  -webkit-box-pack: end;
-  justify-content: flex-end;
-  padding: 20px;  
-`
-
-const InputsContainer = styled.div`          // div dos inputs+botão
-  height: 10%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   position: relative;
-  background-color: #f1f2f7;
-`
+`;
 
-const Button = styled.button`          //botão
-  height: 64%;
-  width: 12%;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  background-color: white;
-`
+const ContainerEsquerda = styled.div`
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+`;
 
-const InputUsuario = styled.input`       //input do usuario
-  height: 50%;
-  width: 80px;
-  font-size: 17px;
-  border: none;
-  border-radius: 4px;  
-  padding: 4px;
-`
+const ContainerMeio = styled.div`
+  width: 82%;
+  border: 1px solid black;
+`;
 
-const InputMensagem = styled.input`       //input das mensagens
-  height: 50%;
-  width: 64%;
-  font-size: 17px;
-  border: none;
-  border-radius: 4px;
-  padding: 4px;
-`
+const ContainerMenu = styled.div`
+  margin-bottom: 2%;
+`;
 
-document.addEventListener("keypress", function(e) {      //função enviar mensagem ENTER
-  if(e.key === 'Enter') {
-      var btn = document.querySelector("#submit");
-    btn.click();
-  }
-});
+const ContainerPlaylists = styled.div`
+  position: relative;
+  height: 70%;
+`;
 
 class App extends React.Component {
-  
   state = {
-    comentario: [],
-    valorInputNomeUsuario: "",
-    valorInputMensagemUsuario: ""
+    playlists: [],
+    playlistDetails: [],
+    abrirPlaylist: "",
+    tela: "inicio",
+    playlistClicada: [],
+  };
+
+  componentDidMount() {
+    this.getAllPlaylists();
   }
 
-  adicionarComentario = () => {
-    const novoObjetoComentario = {
-      nomeUsuario: this.state.valorInputNomeUsuario,
-      mensagemUsuario: this.state.valorInputMensagemUsuario
-    };
+  getAllPlaylists = () => {
+    const AllPlaylists = axios.get(
+      "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+      {
+        headers: {
+          Authorization: "igor-castro-ailton",
+        },
+      }
+    );
 
-    const novoComentario = [ ...this.state.comentario, novoObjetoComentario]
-    this.setState({comentario: novoComentario})
-    this.setState({valorInputNomeUsuario: ""})
-    this.setState({valorInputMensagemUsuario: ""})
-  };
-  
-  onChangeInputNomeUsuario = (event) => {
-    this.setState({ valorInputNomeUsuario: event.target.value });
+    AllPlaylists.then((response) => {
+      this.setState({ playlists: response.data.result.list });
+    }).catch((error) => {
+      console.log(error.response.data.message);
+    });
   };
 
-  onChangeInputMensagemUsuario = (event) => {
-    this.setState({ valorInputMensagemUsuario: event.target.value });
-  };
-  
-  removerComentario = (id) => {
-    if(window.confirm('Deseja deletar esta mensagem?')) {
-      const novoArray = this.state.comentario.filter((pessoa, index) => {
-        return id !== index
-      })
-      this.setState({comentario: novoArray})
+  deletePlaylist = (id) => {
+    if (window.confirm("Tem certeza de que deseja deletar?")) {
+      const deletePlaylist = axios.delete(
+        `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}`,
+        {
+          headers: {
+            Authorization: "igor-castro-ailton",
+          },
+        }
+      );
+
+      deletePlaylist
+        .then((response) => {
+          alert("Playlist deletada com sucesso.");
+          this.getAllPlaylists();
+        })
+        .catch((error) => {
+          alert("Playlist não foi deletada, tente novamente.");
+          console.log(error.response.data.message);
+        });
     }
-  } 
+  };
+
+  getPlaylistTracks = (playlist) => {
+    const playlistTracks = axios.get(
+      `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${playlist.id}/tracks`,
+      {
+        headers: {
+          Authorization: "igor-castro-ailton",
+        },
+      }
+    );
+
+    playlistTracks
+      .then((response) => {
+        console.log(response);
+        this.setState({ playlistDetails: response.data.result.tracks });
+        console.log(this.state.playlistDetails);
+      })
+      .catch((error) => {
+        console.log(error.response.data.message);
+      });
+
+    this.setState({ tela: "abrirplaylist", playlistClicada: playlist });
+  };
+
+  mudarTela = (mudar) => {
+    this.setState({ tela: mudar})
+  }
 
   render() {
-
-    const componenteComentario = this.state.comentario.map((comentario, index) => {
-      return(
-        <SecaoComentario
-        nomeUsuario={comentario.nomeUsuario}  
-        mensagemUsuario={comentario.mensagemUsuario}
-        remover={() => this.removerComentario(index)}
-        />
-      );
-    });
-
-  return (
-    <Container>
-        <MainContainer>
-          <Cabecalho />
-          <ComentariosContainer>
-             {componenteComentario}
-          </ComentariosContainer>
-          <InputsContainer> 
-            <InputUsuario value={this.state.valorInputNomeUsuario} onChange={this.onChangeInputNomeUsuario} placeholder=' Usuário'/>
-            <InputMensagem value={this.state.valorInputMensagemUsuario} onChange={this.onChangeInputMensagemUsuario} placeholder='  Mensagem'/>
-            <Button onClick={this.adicionarComentario} id="submit"><strong>Enviar</strong></Button>
-          </InputsContainer>
-        </MainContainer>
-    </Container>
-  );
+    return (
+      <Container>
+        <ContainerEsquerda>
+          <ContainerMenu>
+            <Menu mudarTela={this.mudarTela} getAllPlaylists={this.getAllPlaylists} />
+          </ContainerMenu>
+          <hr size="1" width="92%" color="grey"></hr>
+          <ContainerPlaylists>
+            <ListaPlaylists
+              abrirPlaylist={this.state.abrirPlaylist}
+              getPlaylistTracks={this.getPlaylistTracks}
+              deletePlaylist={this.deletePlaylist}
+              playlists={this.state.playlists}
+            />
+          </ContainerPlaylists>
+        </ContainerEsquerda>
+        <ContainerMeio>
+          {this.state.tela === "abrirplaylist" && (
+            <AbrirPlaylist
+              playlistClicada={this.state.playlistClicada}
+              getPlaylistTracks={this.getPlaylistTracks}
+              playlistDetails={this.state.playlistDetails}
+            />
+          )}
+          {this.state.tela === "inicio" && (
+            <Inicio />
+          )}
+        </ContainerMeio>
+      </Container>
+    );
   }
 }
 
