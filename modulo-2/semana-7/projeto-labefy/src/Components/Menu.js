@@ -15,6 +15,7 @@ const Input = styled.input`
   padding-left: 5px;
   border-radius: 4%;
   border: 1px solid white;
+  color: white;
 `;
 
 const IconeHome = styled.img`
@@ -23,10 +24,12 @@ const IconeHome = styled.img`
 `;
 
 const Button = styled.button`
-  width: 20%;
+  width: 30%;
   &:hover {
     cursor: pointer;
   }
+  border-radius: 30px;
+  font-size: bold;
 `;
 
 const ContainerIcones = styled.div`
@@ -40,12 +43,25 @@ const ContainerIcones = styled.div`
   }
 `;
 
+const ContainerCriarPlaylist = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 14px 0;
+  color: #a5a5a5;
+  &:hover {
+    cursor: pointer;
+    color: white;
+  }
+  margin-top: 30px;
+`
+
 const ContainerAdicionarPlaylist = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
   margin-bottom: 10px;
+  color: white;
 `;
 
 class Menu extends React.Component {
@@ -102,10 +118,10 @@ class Menu extends React.Component {
           <IconeHome src={iconelupa} />
           <p>Buscar</p>
         </ContainerIcones>
-        <ContainerIcones onClick={this.aparecerTelaAdicionar}>
+        <ContainerCriarPlaylist onClick={this.aparecerTelaAdicionar}>
           <IconeHome src={iconeadicionar} />
           <p>Criar playlist</p>
-        </ContainerIcones>
+        </ContainerCriarPlaylist>
         {this.state.adicionarPlaylist && (
           <ContainerAdicionarPlaylist>
             <Input

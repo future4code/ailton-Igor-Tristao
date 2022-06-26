@@ -16,17 +16,21 @@ const Container = styled.div`
 `;
 
 const ContainerEsquerda = styled.div`
+  position: fixed;
   width: 18%;
   display: flex;
   flex-direction: column;
   background-color: black;
   color: white;
   padding-left: 20px;
+  height: 100%;
 `;
 
 const ContainerMeio = styled.div`
   width: 82%;
+  height: 100%;
   border: 1px solid black;
+  margin-left: 18%;
 `;
 
 const ContainerMenu = styled.div`
@@ -103,15 +107,13 @@ class App extends React.Component {
 
     playlistTracks
       .then((response) => {
-        console.log(response);
         this.setState({ playlistDetails: response.data.result.tracks });
-        console.log(this.state.playlistDetails);
       })
       .catch((error) => {
         console.log(error.response.data.message);
       });
 
-    this.setState({ tela: "abrirplaylist", playlistClicada: playlist });
+      this.setState({ tela: "abrirplaylist", playlistClicada: playlist});
   };
 
   mudarTela = (mudar) => {
