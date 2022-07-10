@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Projeto Astromatch
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+link do surge: https://halting-representative.surge.sh/
 
-## Available Scripts
+**Proposta:** Criar uma plataforma de encontros parecida com o Tinder: o Astromatch.
 
-In the project directory, you can run:
+## Sobre o projeto
 
-### `npm start`
+O projeto foi feito utilizando React, estilizado com styled-components e Chakra ui (framework). Utilizado requisições de uma API para visualizar cada perfil e escolher dar match ou não (documentação da API: https://documenter.getpostman.com/view/7549981/SW12yx56?version=latest). 
+Para a realização do swipe foi utilizado o Tinder card (https://github.com/3DJakob/react-tinder-card).
+_Obs: Como o swipe foi feito para ser utilizado com arrays, a solução que eu encontrei para ser feita em um objeto e de ficar do jeito que eu queria, foi de criar dois componentes idênticos (profile e profileDois) onde ao terminar o swipe ele renderizaria o outro componente, fazendo assim a ilusão de que estamos vendo um map que renderiza conforme o state muda em apenas um componente. _
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Funcionalidades/não funcionalidades do projeto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Página inicial (login)
+#### Funciona:<br>
+Dois botões responsáveis por fazer o login no site.
+Botão **Entrar**: Necessário inserir um numero no input, pois este nome será usado para todas as requisições na api, sempre que alguém acessar utilizando este nome verá o mesmo perfil.
+Botão **Entrar como visitante**: Utiliza um nome de usuário padrão, onde qualquer um que clicar neste botão irá visualizar o mesmo perfil. 
 
-### `npm test`
+### Página dos Perfis
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Funciona:<br>
 
-### `npm run build`
+1. Canto superior: dois botões que redirecionam para outras páginas. No canto esquerdo, um botão para deslogar (voltar a tela de login) e no canto direito um botão para visualizar os matches.
+2. Através das requisições é mostrado um perfil na tela, onde a pessoa poderá "curtir" ou "não curtir", através dos botões na parte inferior.
+3. Também existe a possibilidade de escolher através de um SWIPE, onde basta segurar o card com o mouse e puxar para onde deseja, esquerda (não curtir) ou direita (curtir).
+4. Quando se esgotam os perfis disponíveis (sim a API tem um limite), é necessário resetar os matches caso queira que voltem a aparecer (feito na página de matches).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Página dos Matches
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Funciona:<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Página onde é renderizado os perfis que deram match com você (vindos da API) e um botão para resetar estes matches.
 
-### `npm run eject`
+## Prints do AstroMatch
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p>Página login</p>
+<img src="https://user-images.githubusercontent.com/100432523/178164738-b3c5dce0-3553-4f53-8ce8-94863d25528b.png" alt="tela-login" width="200px" height="300px"/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p>Página Perfil</p>
+<img src="https://user-images.githubusercontent.com/100432523/178164740-a9f7347f-ab71-496b-90ee-db2748a3508d.png" alt="tela-perfil" width="200px" height="300px"/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p>Página Matches</p>
+<img src="https://user-images.githubusercontent.com/100432523/178164739-f09a374f-ffbc-4b11-ae34-49cd648adc93.png" alt="tela-matches" width="200px" height="300px"/>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
