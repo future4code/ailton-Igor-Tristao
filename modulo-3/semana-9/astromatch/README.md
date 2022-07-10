@@ -1,6 +1,6 @@
 # Projeto Astromatch
 
-link do surge: https://halting-representative.surge.sh/
+link do surge: https://merciful-knee.surge.sh/
 
 **Proposta:** Criar uma plataforma de encontros parecida com o Tinder: o Astromatch.
 
