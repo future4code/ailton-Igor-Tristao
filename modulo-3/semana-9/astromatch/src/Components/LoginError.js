@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import fire from "../assets/fire.png";
 import { Button, Input, Stack } from "@chakra-ui/react";
-import {MainContainer, LoginContainer, TitleContainer, FireImage, Title, LoginButtons, TextError} from "./styledComponents/LoginStyled";
+import {
+  MainContainer,
+  LoginContainer,
+  TitleContainer,
+  FireImage,
+  Title,
+  LoginButtons,
+  TextError,
+} from "./styledComponents/LoginStyled";
 
 function LoginError(props) {
   const [username, setUsername] = useState("");

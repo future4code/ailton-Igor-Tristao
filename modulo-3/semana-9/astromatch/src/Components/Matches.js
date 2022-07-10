@@ -4,7 +4,6 @@ import fire from "../assets/fire.png";
 import { Button, Icon, Spinner } from "@chakra-ui/react";
 import { IoIosReturnLeft } from "react-icons/io";
 import { RiWechatFill } from "react-icons/ri";
-import styled from "styled-components";
 import {
   MainContainer,
   Header,
@@ -16,17 +15,12 @@ import {
   ContainerMatch,
   MatchImage,
   ContainerProfilePicture,
+  NoMoreProfiles,
 } from "./styledComponents/MatchesStyled";
-
-const NoMoreProfiles = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
 
 function Matches(props) {
   const [matches, setMatches] = useState([]);
+  const [noMoreMatches, setNoMoreMatches] = useState(false);
 
   useEffect(() => {
     getMatches();
@@ -38,7 +32,12 @@ function Matches(props) {
         `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:${props.currentUser}/matches`
       )
       .then((response) => {
-        setMatches(response.data.matches);
+        if (response.data.matches.length === 0) {
+          setNoMoreMatches(true);
+          setMatches(response.data.matches);
+        } else {
+          setMatches(response.data.matches);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -53,6 +52,7 @@ function Matches(props) {
       .then((response) => {
         alert("Você desfez seus matches.");
         getMatches();
+        setNoMoreMatches(!false);
       })
       .catch((err) => {
         console.log(err);
@@ -118,9 +118,24 @@ function Matches(props) {
         </ContainerMatches>
       ) : (
         <Loading>
-          {matches.length === 0 ? (
+          {noMoreMatches === true ? (
             <NoMoreProfiles>
-              <p>Não teve like ainda :c</p>
+              <p>Você ainda não deu um match!</p>
+              <Button
+                transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
+                _active={{
+                  transform: "scale(1.02)",
+                }}
+                marginTop="10px"
+                height="32px"
+                marginBottom="10px"
+                _hover={{ bg: "linear-gradient(#f57a83, #df638d)" }}
+                color="white"
+                backgroundImage="linear-gradient(#f65e69, #e04a7c)"
+                onClick={() => clearMatches()}
+              >
+                Resetar matches
+              </Button>
             </NoMoreProfiles>
           ) : (
             <Spinner size="sm" color="#f65e69" />

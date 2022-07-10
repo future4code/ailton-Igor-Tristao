@@ -8,6 +8,8 @@ const MainContainer = styled.div`
   border-radius: 4px;
   background-color: white;
   background-image: linear-gradient(#f7f0f0, white, #f7f0f0);
+  /* display: flex; */
+
 `;
 
 const Header = styled.div`
@@ -91,6 +93,15 @@ const ContainerProfilePicture = styled.div`
   width: 100%;
 `;
 
+const NoMoreProfiles = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+`;
+
+
 export {
   MainContainer,
   Header,
@@ -102,4 +113,5 @@ export {
   ContainerMatch,
   MatchImage,
   ContainerProfilePicture,
+  NoMoreProfiles,
 };
