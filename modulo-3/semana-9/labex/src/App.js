@@ -1,11 +1,20 @@
-import React from 'react';
-import { Router } from './routes/Router';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
+import React from "react";
+import { createGlobalStyle } from "styled-components";
+import { Router } from "./routes/Router";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Bebas Neue', cursive; */
+    box-sizing: border-box;
+  };
+  `;
 
 function App() {
   return (
     <div>
+      <GlobalStyle></GlobalStyle>
       <Router />
     </div>
   );

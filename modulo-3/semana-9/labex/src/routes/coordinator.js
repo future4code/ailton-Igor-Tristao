@@ -1,5 +1,9 @@
-export const goToLoginPage = (navigate) => {
+export const goToLoginPage = (navigate, logout) => {
+
   navigate("/login");
+  if(logout === 'logout') {
+    window.localStorage.clear();
+  }
 };
 
 export const goToHomePage = (navigate) => {
@@ -14,8 +18,8 @@ export const goToCreateTripPage = (navigate) => {
   navigate(`/admin/create`);
 };
 
-export const goToTripDetailsPage = (navigate) => {
-  navigate(`/admin/tripDetails`);
+export const goToTripDetailsPage = (navigate, id) => {
+  navigate(`/admin/tripDetails/${id}`);
 };
 
 export const goToApplicationPage = (navigate) => {
