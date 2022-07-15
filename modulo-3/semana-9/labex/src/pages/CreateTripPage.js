@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { goBack } from "../routes/coordinator";
 import { useProtectedPage } from "../Hooks/useProtectedPage";
+import useForm from "../Hooks/useForm";
 
 const Container = styled.div`
   display: flex;
@@ -33,31 +34,33 @@ const Footer = styled.div`
   justify-content: center;
 `;
 
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
 function CreateTripPage() {
   const navigate = useNavigate();
 
-  const [name, setName] = useState("");
-  const [planet, setPlanet] = useState("");
-  const [date, setDate] = useState("");
-  const [description, setDescription] = useState("");
-  const [durationInDays, setDurationInDays] = useState("");
+  const { form, onChange, clearFields } = useForm({
+    name: "",
+    planet: "",
+    date: "",
+    description: "",
+    durationInDays: "",
+  });
 
   useProtectedPage(navigate);
 
-  const createTrip = () => {
+  const createTrip = (event) => {
+    event.preventDefault();
+
     const token = localStorage.getItem("token");
-    const body = {
-      name,
-      planet,
-      date,
-      description,
-      durationInDays,
-    };
 
     axios
       .post(
         "https://us-central1-labenu-apis.cloudfunctions.net/labeX/igor-castro-ailton/trips",
-        body,
+        form,
         {
           headers: {
             auth: token,
@@ -65,53 +68,72 @@ function CreateTripPage() {
         }
       )
       .then((response) => {
-        console.log(response);
+        alert('Viagem marcada com sucesso.')
       })
       .catch((err) => {
-        console.log(err);
       });
-      setName("")
-      setPlanet("none")
-      setDate(new Date())
-      setDescription("")
-      setDurationInDays("")
+    clearFields();
   };
 
   return (
     <Container>
       <Header>CreateTripPage</Header>
       <MainContainer>
-        <input
-          type={"text"}
-          placeholder="Insira o nome"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type={"date"}
-          placeholder="Insira a data"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
-        <input
-          type={"text"}
-          placeholder="Insira a descrição"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <input
-          type={"number"}
-          placeholder="Insira a duração em dias"
-          value={durationInDays}
-          onChange={(e) => setDurationInDays(e.target.value)}
-        />
-        <select value={planet} onChange={(e) => setPlanet(e.target.value)}>
-          <option value="none">Escolha o planeta</option>
-          <option value="Terra">Terra</option>
-          <option value="Marte">Marte</option>
-          <option value="Saturno">Saturno</option>
-        </select>
-        <button onClick={() => createTrip()}>Criar viagem</button>
+        <Form onSubmit={createTrip}>
+          <input
+            name="name"
+            placeholder="Insira o nome"
+            value={form.name}
+            onChange={onChange}
+            required
+            pattern={"^.{6,}"}
+            title={"O nome precisa ter no mínimo 6 caracteres."}
+          />
+          <input
+            name="date"
+            type={"date"}
+            placeholder="Insira a data"
+            value={form.date}
+            onChange={onChange}
+            required
+            min="2022-09-01"
+          />
+          <input
+            name="description"
+            placeholder="Insira a descrição"
+            value={form.description}
+            onChange={onChange}
+            required
+            pattern={"^.{30,60}"}
+            title={"Descrição precisa ter no mínimo 30 caracteres e no máximo 60"}
+          />
+          <input
+            name="durationInDays"
+            type={"number"}
+            placeholder="Insira a duração em dias"
+            value={form.durationInDays}
+            onChange={onChange}
+            required
+            min={50}
+          />
+          <select
+            name="planet"
+            value={form.planet}
+            onChange={onChange}
+            required
+          >
+            <option value="none">Escolha o planeta</option>
+            <option value="Mercúrio">Mercúrio</option>
+            <option value="Vênus">Vênus</option>
+            <option value="Terra">Terra</option>
+            <option value="Marte">Marte</option>
+            <option value="Júpiter">Júpiter</option>
+            <option value="Saturno">Saturno</option>
+            <option value="Urano">Urano</option>
+            <option value="Netuno">Netuno</option>
+          </select>
+          <button>Criar viagem</button>
+        </Form>
         <button onClick={() => goBack(navigate)}>Voltar</button>
       </MainContainer>
       <Footer>footer</Footer>

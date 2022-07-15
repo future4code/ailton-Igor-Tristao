@@ -22,8 +22,8 @@ export const goToTripDetailsPage = (navigate, id) => {
   navigate(`/admin/tripDetails/${id}`);
 };
 
-export const goToApplicationPage = (navigate) => {
-  navigate(`/application`);
+export const goToApplicationPage = (navigate, name, id) => {
+  navigate(`/application/${name}/${id}`);
 };
 
 export const goBack = (navigate) => {

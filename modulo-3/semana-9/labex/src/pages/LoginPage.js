@@ -4,6 +4,7 @@ import { goBack } from "../routes/coordinator";
 import styled from "styled-components";
 import { goToAdminHomePage, goToHomePage } from "../routes/coordinator";
 import axios from "axios";
+import useForm from "../Hooks/useForm";
 
 const Container = styled.div`
   display: flex;
@@ -29,38 +30,34 @@ const Footer = styled.div`
   height: 10vh;
   display: flex;
 `;
-const ButtonsContainer = styled.div`
+
+const Form = styled.form`
   display: flex;
-  gap: 10px;
+  flex-direction: column;
 `;
 
 function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { form, onChange, clearFields } = useForm({ email: "", password: "" });
 
   const navigate = useNavigate();
 
-  const onSubmitLogin = () => {
-    const body = {
-      email,
-      password,
-    };
+  const onSubmitLogin = (event) => {
+    event.preventDefault();
 
     axios
       .post(
         "https://us-central1-labenu-apis.cloudfunctions.net/labeX/igor-castro-ailton/login",
-        body
+        form
       )
       .then((res) => {
         console.log(res.data.token);
-        localStorage.setItem('token', res.data.token)
-        goToAdminHomePage(navigate)
+        localStorage.setItem("token", res.data.token);
+        goToAdminHomePage(navigate);
       })
       .catch((err) => {
         console.log(err.response.data.message);
-        setEmail("")
-        setPassword("")
       });
+    clearFields();
   };
 
   return (
@@ -68,20 +65,26 @@ function LoginPage() {
       <Header>Header</Header>
       <MainContainer>
         LoginPage
-        <input
-          placeholder="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          placeholder="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <ButtonsContainer>
-          <button onClick={() => onSubmitLogin()}>Entrar</button>
-          <button onClick={() => goToHomePage(navigate)}>Voltar</button>
-        </ButtonsContainer>
+        <Form onSubmit={onSubmitLogin}>
+          <input
+            name="email"
+            type="email"
+            placeholder="Insira seu email"
+            value={form.email}
+            onChange={onChange}
+            required
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="Insira sua senha"
+            value={form.password}
+            onChange={onChange}
+            required
+          />
+          <button>Entrar</button>
+        </Form>
+        <button onClick={() => goToHomePage(navigate)}>Voltar</button>
       </MainContainer>
       <Footer>Footer</Footer>
     </Container>
