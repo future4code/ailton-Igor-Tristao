@@ -1,73 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { goToAdminHomePage } from "../routes/coordinator";
 import { useProtectedPage } from "../Hooks/useProtectedPage";
 import { useGetTripDetails } from "../Hooks/useGetTripDetails";
 import axios from "axios";
-import styled from "styled-components";
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 100vh;
-`;
-
-const Header = styled.div`
-  display: flex;
-  height: 12vh;
-  align-items: center;
-  justify-content: start;
-  padding-left: 10px;
-`;
-
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 86vh;
-`;
-
-const Title = styled.p`
-  font-family: "Audiowide", cursive;
-  font-size: 35px;
-  width: 21%;
-  letter-spacing: 8px;
-`;
-
-const TripDetails = styled.div`
-  border: 1px solid black;
-  height: 200px;
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Text = styled.p`
-  margin: 5px;
-`;
-const TripCandidates = styled.div`
-  height: 100%;
-  width: 40%;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const CandidateContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  border: 1px solid red;
-`;
-
-const TripApproved = styled.div`
-  width: 37%;
-  padding: 20px;
-  height: 100%;
-  border: 1px solid blue;
-`;
+import { Player } from "@lottiefiles/react-lottie-player";
+import { Button } from "@chakra-ui/react";
+import { Spinner } from "@chakra-ui/react";
+import {
+  Container,
+  Header,
+  MainContainer,
+  TitleHeader,
+  BackgroundContainer,
+  TripDetails,
+  Text,
+  TripCandidates,
+  CandidatesEmpty,
+  CandidateContainer,
+  TripApproved,
+  ApprovedEmpty,
+  TextName,
+  TextsContainer,
+  ButtonsContainer,
+  LoadingContainer,
+} from "../styledComponents/TripDetailsPage";
 
 function TripDetailsPage() {
   const [showCandidates, setShowCandidates] = useState(false);
@@ -77,7 +34,9 @@ function TripDetailsPage() {
   const pathParams = useParams();
   useProtectedPage(navigate);
 
-  const [trip, candidates, approveds] = useGetTripDetails(pathParams.id);
+  const [trip, candidates, approveds, isLoading] = useGetTripDetails(
+    pathParams.id
+  );
 
   const decideCandidate = (id, decision) => {
     const token = localStorage.getItem("token");
@@ -96,11 +55,23 @@ function TripDetailsPage() {
         }
       )
       .then((res) => {
-        alert("Candidatura aprovada!");
+        if (decision === true) {
+          alert("Candidatura aprovada.");
+        } else {
+          alert("Candidatura reprovada.");
+        }
       })
       .catch((err) => {
-        console.log(err.response.data.message);
       });
+  };
+
+  const fixDate = () => {
+    if (trip.date) {
+      return `${trip.date.slice(8, 10)}-${trip.date.slice(
+        5,
+        7
+      )}-${trip.date.slice(0, 4)}`;
+    }
   };
 
   const renderCondicional = (info) => {
@@ -115,18 +86,32 @@ function TripDetailsPage() {
   const renderCandidates = candidates.map((candidate) => {
     return (
       <CandidateContainer key={candidate.id}>
-        <p>Nome: {candidate.name}</p>
-        <p>Profissão: {candidate.profission}</p>
-        <p>Idade: {candidate.age}</p>
-        <p>País: {candidate.country}</p>
-        <p>Texto de candidatura: </p>
-        <p>{candidate.applicationText}</p>
-        <button onClick={() => decideCandidate(candidate.id, true)}>
-          Aprovar
-        </button>
-        <button onClick={() => decideCandidate(candidate.id, false)}>
-          Reprovar
-        </button>
+        <TextsContainer>
+          <p>
+            <strong>Nome:</strong> {candidate.name}
+          </p>
+          <p>
+            <strong>Profissão:</strong> {candidate.profession}
+          </p>
+          <p>
+            <strong>Idade:</strong> {candidate.age}
+          </p>
+          <p>
+            <strong>País:</strong> {candidate.country}
+          </p>
+          <p>
+            <strong>Texto de candidatura:</strong>{" "}
+          </p>
+          <p>{candidate.applicationText}</p>
+        </TextsContainer>
+        <ButtonsContainer>
+          <Button onClick={() => decideCandidate(candidate.id, true)}>
+            Aprovar
+          </Button>
+          <Button onClick={() => decideCandidate(candidate.id, false)}>
+            Reprovar
+          </Button>
+        </ButtonsContainer>
       </CandidateContainer>
     );
   });
@@ -141,26 +126,77 @@ function TripDetailsPage() {
 
   return (
     <Container>
+      <BackgroundContainer>
+        <Player
+          backgroundSize="cover"
+          backgroundRepeat="repeat"
+          autoplay
+          loop
+          src="https://assets8.lottiefiles.com/private_files/lf30_nSM2dY.json"
+          style={{ height: "100%", width: "100%" }}
+        />
+      </BackgroundContainer>
       <Header>
-        <Title>LabeX</Title>
+        <TitleHeader>LabeX</TitleHeader>
       </Header>
       <MainContainer>
-        <TripDetails>
-          <Text>{trip.name}</Text>
-          <Text>{trip.description}</Text>
-          <Text>{trip.planet}</Text>
-          <Text>{trip.durationInDays}</Text>
-          <Text>{trip.date}</Text>
-          <button onClick={() => renderCondicional("candidates")}>
-            Candidatos
-          </button>
-          <button onClick={() => renderCondicional("approveds")}>
-            Aprovados
-          </button>
-        </TripDetails>
-        {showCandidates && <TripCandidates>{renderCandidates}</TripCandidates>}
-        {showApproveds && <TripApproved>{renderApproved}</TripApproved>}
-        <button onClick={() => goToAdminHomePage(navigate)}>Voltar</button>
+        {!isLoading ? (
+          <TripDetails>
+            <TextName>{trip.name}</TextName>
+            <TextsContainer>
+              <Text>
+                <strong>Descrição: </strong>
+                {trip.description}
+              </Text>
+              <Text>
+                <strong>Planeta: </strong>
+                {trip.planet}
+              </Text>
+              <Text>
+                <strong>Duração: </strong>
+                {trip.durationInDays}
+              </Text>
+              <Text>
+                <strong>Data: </strong>
+                {fixDate()}
+              </Text>
+            </TextsContainer>
+            <ButtonsContainer>
+              <Button onClick={() => renderCondicional("candidates")}>
+                Candidatos
+              </Button>
+              <Button onClick={() => renderCondicional("approveds")}>
+                Aprovados
+              </Button>
+            </ButtonsContainer>
+          </TripDetails>
+        ) : (
+          <LoadingContainer>
+            <Spinner />
+          </LoadingContainer>
+        )}
+        {showCandidates && candidates.length > 0 && (
+          <TripCandidates>{renderCandidates}</TripCandidates>
+        )}
+        {showCandidates && candidates.length === 0 && (
+          <CandidatesEmpty>Não há nenhum candidato.</CandidatesEmpty>
+        )}
+        {showApproveds && approveds.length > 0 && (
+          <TripApproved>
+            <p>
+              <strong>Candidatos aprovados:</strong>
+            </p>
+            {renderApproved}
+          </TripApproved>
+        )}
+        {showApproveds && approveds.length === 0 && (
+          <ApprovedEmpty>Não há nenhum candidato aprovado.</ApprovedEmpty>
+        )}
+        {!isLoading && (
+          <Button marginTop="5px" onClick={() => goToAdminHomePage(navigate)}>
+            Voltar
+          </Button>
+        )}
       </MainContainer>
     </Container>
   );

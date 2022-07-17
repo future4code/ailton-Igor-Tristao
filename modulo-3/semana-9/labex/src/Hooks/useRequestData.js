@@ -10,9 +10,7 @@ export const useRequestData = (url) => {
       .then((res) => {
         setData(res.data.trips);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   }, [url]);
 
   return data;

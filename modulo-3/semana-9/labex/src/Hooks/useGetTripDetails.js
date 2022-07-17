@@ -5,8 +5,10 @@ export const useGetTripDetails = (id) => {
   const [trip, setTrip] = useState({});
   const [candidates, setCandidates] = useState([]);
   const [approveds, setApproveds] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
+    setIsLoading(true);
     const token = localStorage.getItem("token");
     axios
       .get(
@@ -21,10 +23,11 @@ export const useGetTripDetails = (id) => {
         setTrip(res.data.trip);
         setCandidates(res.data.trip.candidates);
         setApproveds(res.data.trip.approved);
+        setIsLoading(false);
       })
       .catch((err) => {
-        console.log(err);
+        setIsLoading(false);
       });
   }, [id]);
-  return [ trip, candidates, approveds ];
+  return [ trip, candidates, approveds, isLoading ];
 };

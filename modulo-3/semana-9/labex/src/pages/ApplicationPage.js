@@ -1,51 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import styled from "styled-components";
 import useForm from "../Hooks/useForm";
 import { goToHomePage } from "../routes/coordinator";
-
-const ApplicationContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  width: 200px;
-  justify-content: center;
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 100vh;
-  z-index: -1;
-`;
-
-const Header = styled.div`
-  height: 14vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1;
-`;
-
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 86vh;
-  z-index: 1;
-`;
-
-const Title = styled.p`
-  font-family: "Audiowide", cursive;
-  font-size: 70px;
-  width: 21%;
-  letter-spacing: 8px;
-  margin-left: 39.2%;
-`;
-
+import { Player } from "@lottiefiles/react-lottie-player";
+import { Input, Button, Select } from "@chakra-ui/react";
+import { ApplicationContainer, Container, Header, MainContainer, TitleHeader, BackgroundContainer, Form, TitleApplication, TripName } from "../styledComponents/ApplicationPage"
 
 function ApplicationPage() {
   const navigate = useNavigate();
@@ -68,61 +28,81 @@ function ApplicationPage() {
         form
       )
       .then((res) => {
-        console.log(res);
+        alert('Você se candidatou com sucesso!')
       })
       .catch((err) => {
-        console.log(err);
       });
     clearFields();
   };
 
   return (
     <Container>
+      <BackgroundContainer>
+        <Player
+          backgroundSize="cover"
+          backgroundRepeat="repeat"
+          autoplay
+          loop
+          src="https://assets8.lottiefiles.com/private_files/lf30_nSM2dY.json"
+          style={{ height: "100%", width: "100%" }}
+        />
+      </BackgroundContainer>
       <Header>
-        <Title>LabeX</Title>
+        <TitleHeader>LabeX</TitleHeader>
       </Header>
       <MainContainer>
         <ApplicationContainer>
-          <p>Aplicando para a viagem: {pathParams.name}</p>
-          <form onSubmit={applicationTrip}>
-            <input
+          <TitleApplication>Aplicando para a viagem:</TitleApplication>
+          <TripName>{pathParams.name}</TripName>
+          <Form onSubmit={applicationTrip}>
+            <Input
               name="name"
+              color="white"
               placeholder="Nome"
+              _placeholder={{ opacity: 0.7, color: 'white' }}
               value={form.name}
               onChange={onChange}
               required
               pattern={"^.{3,}"}
               title={"O nome deve ter no mínimo 3 caracteres."}
             />
-            <input
+            <Input
               type="number"
+              color="white"
               name="age"
               placeholder="Idade"
+              _placeholder={{ opacity: 0.7, color: 'white' }}
               value={form.age}
               onChange={onChange}
               required
               min={18}
             />
-            <input
+            <Input
               name="applicationText"
+              color="white"
               placeholder="Motivos para ser aceito"
+              _placeholder={{ opacity: 0.7, color: 'white' }}
               value={form.applicationText}
               onChange={onChange}
               required
               pattern={"^.{30,}"}
               title={"Deve ter no mínimo 30 caracteres."}
             />
-            <input
+            <Input
               name="profession"
+              color="white"
               placeholder="Profissão"
+              _placeholder={{ opacity: 0.7, color: 'white' }}
               value={form.profession}
               onChange={onChange}
               required
               pattern={"^.{10,}"}
               title={"Deve ter no mínimo 10 caracteres."}
             />
-            <select
+            <Select
               placeholder="País de origem"
+              color='grey'
+              opacity='1'
               name="country"
               value={form.country}
               onChange={onChange}
@@ -415,10 +395,12 @@ function ApplicationPage() {
               <option value="Wallis e Futuna">Wallis e Futuna</option>
               <option value="Zimbabwe">Zimbabwe</option>
               <option value="Zâmbia">Zâmbia</option>
-            </select>
-            <button>Aplicar</button>
-          </form>
-          <button onClick={() => goToHomePage(navigate)}>Voltar</button>
+            </Select>
+            <Button type="submit">Aplicar</Button>
+          </Form>
+          <Button width="150px" onClick={() => goToHomePage(navigate)}>
+            Voltar
+          </Button>
         </ApplicationContainer>
       </MainContainer>
     </Container>

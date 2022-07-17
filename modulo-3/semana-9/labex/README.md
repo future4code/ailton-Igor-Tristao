@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Projeto Labe X
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+link do surge: https://labex-igor.surge.sh
+senha do admin: admin@labex.com / admin
 
-## Available Scripts
+**Proposta:** Criar uma plataforma de gerenciamento de viagens espaciais. 
 
-In the project directory, you can run:
+## Sobre o projeto
 
-### `npm start`
+O projeto foi feito utilizando React, estilizado com styled-components e Chakra-ui (framework). Feito através de requisições de uma API para cadastrar, visualizar, remover, aplicar, aceitar aplicações etc, documentação da API: https://documenter.getpostman.com/view/9133542/TzCTZkQr
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Dei preferencia em aprender um pouco de animação visto que não temos diretamente isto no curso Labenu. Por isto algumas partes não foram estilizadas, como os botões do chakra-ui, pois queria aprender coisas novas e senti que o padrão do chakra-ui estava bom suficiente.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Funcionalidades/não funcionalidades do projeto
 
-### `npm test`
+### Página inicial (home)
+#### Funciona:<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Visualização das viagens cadastradas pelo admin
+- Capacidade de escolher uma viagem para se inscrever -> leva à página de inscrição.
+- Filtro para buscar as viagens por planetas
+- Botão para fazer login -> leva à pagina de login.
 
-### `npm run build`
+### Página inscrição
+#### Funciona:<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Preenchimento de um formulário que faz uma requisição na API para se candidatar a viagem.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Página login
+#### Funciona:<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Página de login da parte administrativa. Para ter acesso é necessário informar um email e senha previamente criado na API. Caso inseridos corretamente leva as páginas de administração, senão os informa que a senha esta errada e mantém na tela de login. Autorização é realizada através do token retornado da API, que é guardado no localStorage e usado nas outras páginas.
 
-### `npm run eject`
+### Página admin
+#### Funciona:<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Visualização das viagens e capacidade de excluir/ver detalhes das viagens.
+- Painel onde é capaz de criar uma nova viagem e de deslogar.
+- Deslogar significa apagar o localStorage e retornar o usuário a página de login.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Página detalhes da viagem
+#### Funciona:<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Visualização das informações da viagem e dos candidatos que aplicaram/que foram aprovados.
+- Ao visualizar os candidatos que se inscreveram é possível aceitar/removar suas inscrições.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Prints do LabeX:
 
-## Learn More
+<p>Página inicial</p>
+<img src="https://user-images.githubusercontent.com/100432523/179381989-23f85ed3-ec9a-462a-8b8b-3fad7f4450f9.png" alt="tela-inicial" width="350px" height="200px"/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+<p>Página Inscrição</p>
+<img src="https://user-images.githubusercontent.com/100432523/179381896-256f564c-7f22-4f64-a296-8e76fcb09323.png" alt="tela-inscrição" width="350px" height="200px"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<p>Página Login</p>
+<img src="https://user-images.githubusercontent.com/100432523/179381898-efff3cbf-01b3-4e3d-96a6-0bfd6f6d6a0d.png" alt="tela-login" width="350px" height="200px"/>
 
-### Analyzing the Bundle Size
+<p>Página Admin page</p>
+<img src="https://user-images.githubusercontent.com/100432523/179381892-e515717a-475b-4d96-85f0-b48c7b6ef8ac.png" alt="tela-admin-page" width="350px" height="200px"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<p>Página Criar viagens</p>
+<img src="https://user-images.githubusercontent.com/100432523/179381893-ff50242b-eb69-4059-ae1a-4017cf2aa520.png" alt="tela-cadastro-viagens" width="350px" height="200px"/>
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p>Página Detalhes das viagens</p>
+<img src="https://user-images.githubusercontent.com/100432523/179381894-a10c3691-a76b-41b0-a2da-814049acb72e.png" alt="tela-detalhes" width="350px" height="200px"/>

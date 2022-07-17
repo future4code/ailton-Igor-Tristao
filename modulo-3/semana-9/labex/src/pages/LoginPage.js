@@ -1,40 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { goBack } from "../routes/coordinator";
-import styled from "styled-components";
 import { goToAdminHomePage, goToHomePage } from "../routes/coordinator";
 import axios from "axios";
 import useForm from "../Hooks/useForm";
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 100vh;
-`;
-
-const Header = styled.div`
-  height: 10vh;
-  display: flex;
-`;
-
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  min-height: 80vh;
-`;
-
-const Footer = styled.div`
-  height: 10vh;
-  display: flex;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
+import { Player } from "@lottiefiles/react-lottie-player";
+import { Input, Button } from "@chakra-ui/react";
+import { Container, Header,MainContainer, TitleHeader, BackgroundContainer, Form, ButtonContainer, TitleText } from "../styledComponents/LoginPage"
 
 function LoginPage() {
   const { form, onChange, clearFields } = useForm({ email: "", password: "" });
@@ -50,23 +21,34 @@ function LoginPage() {
         form
       )
       .then((res) => {
-        console.log(res.data.token);
         localStorage.setItem("token", res.data.token);
         goToAdminHomePage(navigate);
       })
       .catch((err) => {
-        console.log(err.response.data.message);
+        alert('Login ou senha incorreta.')
       });
     clearFields();
   };
 
   return (
     <Container>
-      <Header>Header</Header>
+      <BackgroundContainer>
+        <Player
+          backgroundSize="cover"
+          backgroundRepeat="repeat"
+          autoplay
+          loop
+          src="https://assets8.lottiefiles.com/private_files/lf30_nSM2dY.json"
+          style={{ height: "100%", width: "100%" }}
+        />
+      </BackgroundContainer>
+      <Header>
+        <TitleHeader>LabeX</TitleHeader>
+      </Header>
       <MainContainer>
-        LoginPage
+        <TitleText>Acessar área administrativa</TitleText>
         <Form onSubmit={onSubmitLogin}>
-          <input
+          <Input
             name="email"
             type="email"
             placeholder="Insira seu email"
@@ -74,7 +56,7 @@ function LoginPage() {
             onChange={onChange}
             required
           />
-          <input
+          <Input
             name="password"
             type="password"
             placeholder="Insira sua senha"
@@ -82,11 +64,12 @@ function LoginPage() {
             onChange={onChange}
             required
           />
-          <button>Entrar</button>
+          <ButtonContainer>
+            <Button type="submit">Entrar</Button>
+            <Button onClick={() => goToHomePage(navigate)}>Voltar</Button>
+          </ButtonContainer>
         </Form>
-        <button onClick={() => goToHomePage(navigate)}>Voltar</button>
       </MainContainer>
-      <Footer>Footer</Footer>
     </Container>
   );
 }

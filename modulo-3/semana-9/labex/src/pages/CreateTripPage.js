@@ -1,43 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import axios from "axios";
-import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { goBack } from "../routes/coordinator";
 import { useProtectedPage } from "../Hooks/useProtectedPage";
 import useForm from "../Hooks/useForm";
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 100vh;
-`;
-
-const Header = styled.div`
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-`;
-
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  min-height: 80vh;
-  gap: 5px;
-`;
-
-const Footer = styled.div`
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
+import { Player } from "@lottiefiles/react-lottie-player";
+import { Input, Button, Select } from "@chakra-ui/react";
+import { Container, Header, MainContainer, TitleHeader, BackgroundContainer, Form, TitleCreate} from "../styledComponents/CreateTripPage"
 
 function CreateTripPage() {
   const navigate = useNavigate();
@@ -68,56 +37,78 @@ function CreateTripPage() {
         }
       )
       .then((response) => {
-        alert('Viagem marcada com sucesso.')
+        alert("Viagem marcada com sucesso.");
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
     clearFields();
   };
 
   return (
     <Container>
-      <Header>CreateTripPage</Header>
+      <BackgroundContainer>
+        <Player
+          backgroundSize="cover"
+          backgroundRepeat="repeat"
+          autoplay
+          loop
+          src="https://assets8.lottiefiles.com/private_files/lf30_nSM2dY.json"
+          style={{ height: "100%", width: "100%" }}
+        />
+      </BackgroundContainer>
+      <Header>
+        <TitleHeader>LabeX</TitleHeader>
+      </Header>
       <MainContainer>
+        <TitleCreate>Cadastrar um viagem</TitleCreate>
         <Form onSubmit={createTrip}>
-          <input
+          <Input
             name="name"
             placeholder="Insira o nome"
+            _placeholder={{ opacity: 0.7, color: "white" }}
             value={form.name}
             onChange={onChange}
             required
+            width="350px"
+            color="white"
             pattern={"^.{6,}"}
             title={"O nome precisa ter no mínimo 6 caracteres."}
           />
-          <input
+          <Input
             name="date"
             type={"date"}
-            placeholder="Insira a data"
+            color="white"
+            opacity="0.7"
             value={form.date}
             onChange={onChange}
             required
             min="2022-09-01"
           />
-          <input
+          <Input
             name="description"
             placeholder="Insira a descrição"
+            color="white"
+            _placeholder={{ opacity: 0.7, color: "white" }}
             value={form.description}
             onChange={onChange}
             required
-            pattern={"^.{30,60}"}
-            title={"Descrição precisa ter no mínimo 30 caracteres e no máximo 60"}
+            pattern={"^.{30,70}"}
+            title={"Descrição precisa ter no mínimo 30 e no máximo 70 caracteres."}
           />
-          <input
+          <Input
             name="durationInDays"
             type={"number"}
+            color="white"
             placeholder="Insira a duração em dias"
+            _placeholder={{ opacity: 0.7, color: "white" }}
             value={form.durationInDays}
             onChange={onChange}
             required
             min={50}
           />
-          <select
+          <Select
             name="planet"
+            opacity="1"
+            color="grey"
             value={form.planet}
             onChange={onChange}
             required
@@ -131,12 +122,11 @@ function CreateTripPage() {
             <option value="Saturno">Saturno</option>
             <option value="Urano">Urano</option>
             <option value="Netuno">Netuno</option>
-          </select>
-          <button>Criar viagem</button>
+          </Select>
+          <Button type="submit">Criar viagem</Button>
         </Form>
-        <button onClick={() => goBack(navigate)}>Voltar</button>
+        <Button onClick={() => goBack(navigate)}>Voltar</Button>
       </MainContainer>
-      <Footer>footer</Footer>
     </Container>
   );
 }

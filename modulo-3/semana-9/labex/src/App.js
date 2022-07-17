@@ -1,13 +1,12 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import { Router } from "./routes/Router";
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from "@chakra-ui/react";
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    /* font-family: 'Bebas Neue', cursive; */
     box-sizing: border-box;
   };
   `;
