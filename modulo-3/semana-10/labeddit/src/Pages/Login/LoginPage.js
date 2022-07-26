@@ -1,25 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
 import { goToCreateAccountPage, goToFeedPage } from "../../Routes/coordinator";
 import axios from "axios";
 import useForm from "../../Hooks/useForm";
-
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const ContainerInputs = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  gap: 1rem;
-`;
+import labenuIcon from "../../assets/labenuicone.png";
+import { LabelFloat } from "../FloatingLabelStyled";
+import { Container, ContainerTitle, ContainerInputs, Form, ButtonContinue, ButtonCreateAccount, Hr, ImageLabenu } from "./StyledLoginPage"
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -36,37 +22,48 @@ function LoginPage() {
         goToFeedPage(navigate);
       })
       .catch((err) => {
-        alert('Login ou senha incorreta.')
+        alert("Login ou senha incorreta.");
       });
     clearFields();
   };
 
   return (
     <Container>
-      <p>LoginPage</p>
+      <ContainerTitle>
+        <ImageLabenu src={labenuIcon} alt="labenu-icone" />
+        <p>LabEddit</p>
+        <span>O projeto de rede social da Labenu</span>
+      </ContainerTitle>
       <ContainerInputs>
-        <form onSubmit={onSubmitLogin}>
-          <input
-            name="email"
-            type="email"
-            placeholder="Insira seu email"
-            value={form.email}
-            onChange={onChange}
-            required
-          />
-          <input
-            name="password"
-            type="password"
-            placeholder="Insira sua senha"
-            value={form.password}
-            onChange={onChange}
-            required
-          />
-          <button type="submit">Continuar</button>
-          <button onClick={() => goToCreateAccountPage(navigate)}>
-            Cadastrar
-          </button>
-        </form>
+        <Form onSubmit={onSubmitLogin}>
+          <LabelFloat>
+            <input
+              name="email"
+              type="email"
+              placeholder=" "
+              value={form.email}
+              onChange={onChange}
+              required
+            />
+            <label>Nome</label>
+          </LabelFloat>
+          <LabelFloat>
+            <input
+              name="password"
+              type="password"
+              placeholder=" "
+              value={form.password}
+              onChange={onChange}
+              required
+            />
+            <label>Senha</label>
+          </LabelFloat>
+          <ButtonContinue type="submit">Continuar</ButtonContinue>
+          <Hr />
+          <ButtonCreateAccount onClick={() => goToCreateAccountPage(navigate)}>
+            Crie uma conta!
+          </ButtonCreateAccount>
+        </Form>
       </ContainerInputs>
     </Container>
   );

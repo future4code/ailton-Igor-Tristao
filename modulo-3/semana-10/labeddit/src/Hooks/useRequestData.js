@@ -1,17 +1,21 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export const useRequestData = (url) => {
-  const [data, setData] = useState(undefined);
+export const useRequestData = (visible, reRenderPosts) => {
+  const [data, setData] = useState([]);
 
   useEffect(() => {
+    const token = localStorage.getItem('token')
     axios
-      .get(url)
-      .then((res) => {
-        setData(res.data.trips);
+      .get(`https://labeddit.herokuapp.com/posts/?size=${visible}`, {
+        headers: {
+          Authorization: token,
+        },
       })
-      .catch((err) => {});
-  }, [url]);
+      .then((res) => {
+        setData(res.data)
+      })
+  }, [visible, reRenderPosts]);
 
-  return data;
+  return data
 };
