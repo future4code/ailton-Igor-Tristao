@@ -189,23 +189,23 @@ function FeedPage() {
           </Post>
           {showShareArray.includes(post.id) && (
             <div id="share-container">
-              <FacebookShareButton url={"https://labeddit-igrr.surge.sh/feed"}>
+              <FacebookShareButton url={"https://labeddit-igorr.surge.sh/feed"}>
                 <FacebookIcon size={32} round={true}></FacebookIcon>
               </FacebookShareButton>
 
-              <TwitterShareButton url={"https://labeddit-igrr.surge.sh/feed"}>
+              <TwitterShareButton url={"https://labeddit-igorr.surge.sh/feed"}>
                 <TwitterIcon size={32} round={true}></TwitterIcon>
               </TwitterShareButton>
 
-              <WhatsappShareButton url={"https://labeddit-igrr.surge.sh/feed"}>
+              <WhatsappShareButton url={"https://labeddit-igorr.surge.sh/feed"}>
                 <WhatsappIcon size={32} round={true}></WhatsappIcon>
               </WhatsappShareButton>
 
-              <TelegramShareButton url={"https://labeddit-igrr.surge.sh/feed"}>
+              <TelegramShareButton url={"https://labeddit-igorr.surge.sh/feed"}>
                 <TelegramIcon size={32} round={true}></TelegramIcon>
               </TelegramShareButton>
 
-              <EmailShareButton url={"https://labeddit-igrr.surge.sh/feed"}>
+              <EmailShareButton url={"https://labeddit-igorr.surge.sh/feed"}>
                 <EmailIcon size={32} round={true}></EmailIcon>
               </EmailShareButton>
             </div>
