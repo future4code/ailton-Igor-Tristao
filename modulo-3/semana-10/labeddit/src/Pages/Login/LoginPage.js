@@ -4,8 +4,9 @@ import { goToCreateAccountPage, goToFeedPage } from "../../Routes/coordinator";
 import axios from "axios";
 import useForm from "../../Hooks/useForm";
 import labenuIcon from "../../assets/labenuicone.png";
-import { LabelFloat } from "../FloatingLabelStyled";
-import { Container, ContainerTitle, ContainerInputs, Form, ButtonContinue, ButtonCreateAccount, Hr, ImageLabenu } from "./StyledLoginPage"
+import { LabelFloat } from "../../StyledComponents/FloatingLabelStyled";
+import { BASE_URL } from "../../Scripts/baseURL"
+import { Container, ContainerTitle, ContainerInputs, Form } from "./StyledLoginPage"
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ function LoginPage() {
     event.preventDefault();
 
     axios
-      .post("https://labeddit.herokuapp.com/users/login", form)
+      .post(`${BASE_URL}/users/login`, form)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         goToFeedPage(navigate);
@@ -30,7 +31,7 @@ function LoginPage() {
   return (
     <Container>
       <ContainerTitle>
-        <ImageLabenu src={labenuIcon} alt="labenu-icone" />
+        <img src={labenuIcon} alt="labenu-icone" />
         <p>LabEddit</p>
         <span>O projeto de rede social da Labenu</span>
       </ContainerTitle>
@@ -58,11 +59,11 @@ function LoginPage() {
             />
             <label>Senha</label>
           </LabelFloat>
-          <ButtonContinue type="submit">Continuar</ButtonContinue>
-          <Hr />
-          <ButtonCreateAccount onClick={() => goToCreateAccountPage(navigate)}>
+          <button id="button-enter" type="submit">Continuar</button>
+          <hr />
+          <button id="button-create" onClick={() => goToCreateAccountPage(navigate)}>
             Crie uma conta!
-          </ButtonCreateAccount>
+          </button>
         </Form>
       </ContainerInputs>
     </Container>

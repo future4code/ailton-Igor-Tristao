@@ -8,6 +8,32 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
+  @media screen and (min-width: 800px) {
+    min-height: 95vh;
+    margin-top: 2vh;
+    height: 100%;
+    min-width: 410px;
+    width: 410px;
+    justify-content: center;
+    margin-left: 30%;
+    border: 1px solid black;
+    border-radius: 12px;
+  }
+`;
+
+export const ContainerTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  height: 45vh;
+
+  img {
+    width: 150px;
+    height: 120px;
+  }
+
   p {
     font-family: "IBM Plex Sans";
     font-weight: 900;
@@ -23,15 +49,11 @@ export const Container = styled.div`
     margin: 0;
     color: #000000;
   }
-`;
 
-export const ContainerTitle = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  align-items: center;
-  height: 45vh;
+  @media screen and (min-width: 800px) {
+    min-height: 40vh;
+    height: 100%;
+  }
 `;
 
 export const ContainerInputs = styled.div`
@@ -40,6 +62,11 @@ export const ContainerInputs = styled.div`
   width: 100%;
   height: 55vh;
   gap: 1rem;
+
+  @media screen and (min-width: 800px) {
+    min-height: 55vh;
+    height: 100%;
+  }
 `;
 
 export const Form = styled.form`
@@ -49,43 +76,43 @@ export const Form = styled.form`
   height: 55vh;
   width: 100%;
   gap: 5px;
-`;
 
-export const ButtonContinue = styled.button`
-  width: 90%;
-  height: 3.2rem;
-  border: none;
-  border-radius: 27px;
-  background: linear-gradient(90deg, #ff6489 0%, #f9b24e 100%);
-  color: white;
-  font-size: 18px;
-  font-weight: 700;
-  font-family: "Noto Sans";
-  margin-top: 3rem;
-`;
+  hr {
+    width: 87%;
+    margin: 12px 0;
+    height: 1px;
+    border: none;
+    transform: rotate(0.32deg);
+    background: linear-gradient(90deg, #ff6489 0%, #f9b24e 100%);
+  }
 
-export const ButtonCreateAccount = styled.button`
-  width: 90%;
-  height: 3.2rem;
-  border: 1px solid #fe7e02;
-  border-radius: 27px;
-  background-color: white;
-  color: #fe7e02;
-  font-size: 18px;
-  font-weight: 700;
-  font-family: "Noto Sans";
-`;
+  #button-enter {
+    width: 90%;
+    height: 3.2rem;
+    border: none;
+    border-radius: 27px;
+    background: linear-gradient(90deg, #ff6489 0%, #f9b24e 100%);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "Noto Sans";
+    margin-top: 3rem;
+  }
 
-export const Hr = styled.hr`
-  width: 87%;
-  margin: 12px 0;
-  height: 1px;
-  border: none;
-  transform: rotate(0.32deg);
-  background: linear-gradient(90deg, #ff6489 0%, #f9b24e 100%);
-`;
+  #button-create {
+    width: 90%;
+    height: 3.2rem;
+    border: 1px solid #fe7e02;
+    border-radius: 27px;
+    background-color: white;
+    color: #fe7e02;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "Noto Sans";
+  }
 
-export const ImageLabenu = styled.img`
-  width: 150px;
-  height: 120px;
+  @media screen and (min-width: 800px) {
+    min-height: 55vh;
+    height: 100%;
+  }
 `;
