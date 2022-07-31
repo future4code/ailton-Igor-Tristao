@@ -28,7 +28,6 @@ function CreateAccount() {
     axios
       .post(`${BASE_URL}/users/signup`, form)
       .then((res) => {
-        console.log(res);
         alert("Conta criada com sucesso.");
         goToLoginPage(navigate);
       })

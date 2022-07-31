@@ -86,12 +86,8 @@ function FeedPage() {
           Authorization: token,
         },
       })
-      .then((res) => {
-        alert("Post criado com sucesso!");
-      })
-      .catch((err) => {
-        console.log(err)
-      });
+      .then((res) => {})
+      .catch((err) => {});
     clearFields();
   };
 
@@ -110,7 +106,6 @@ function FeedPage() {
         setReRenderPosts(!reRenderPosts);
       })
       .catch((err) => {
-        console.log(err);
       });
   };
 
@@ -125,7 +120,6 @@ function FeedPage() {
         setReRenderPosts(!reRenderPosts);
       })
       .catch((err) => {
-        console.log(err);
       });
   };
 
@@ -255,7 +249,7 @@ function FeedPage() {
           placeholder="Escreva seu post..."
           required
         ></textarea>
-        <button id="button-post" type="submit">
+        <button id="button-post" onClick={() => createPost()}>
           Postar
         </button>
       </Form>

@@ -32,7 +32,6 @@ function PostPage(props) {
         setReRenderComments(!reRenderComments);
       })
       .catch((err) => {
-        console.log(err);
       });
   };
 
@@ -47,7 +46,6 @@ function PostPage(props) {
         setReRenderComments(!reRenderComments);
       })
       .catch((err) => {
-        console.log(err);
       });
   };
 
@@ -66,7 +64,6 @@ function PostPage(props) {
         setInputComment("");
       })
       .catch((err) => {
-        console.log(err);
       });
   };
 
