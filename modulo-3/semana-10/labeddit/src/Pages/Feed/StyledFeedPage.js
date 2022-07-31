@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: start;
   gap: 10px;
 
   p {
@@ -70,7 +71,6 @@ export const Container = styled.div`
     height: 100%;
     min-width: 410px;
     width: 410px;
-    justify-content: center;
     margin-left: 30%;
     border: 1px solid black;
     position: relative;
@@ -115,7 +115,6 @@ export const LabelFloat = styled.div`
     height: 18px;
     padding-left: 13px;
     width: 90%;
-    margin-top: 3px;
     font-size: 14px;
     transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
@@ -123,7 +122,7 @@ export const LabelFloat = styled.div`
     -webkit-appearance: none;
     border-radius: 0;
     background-color: none;
-  }
+  } 
 
   input::placeholder {
     color: transparent;
@@ -134,6 +133,12 @@ export const LabelFloat = styled.div`
     font-size: 12px;
     margin-top: 0;
   }
+
+  @media screen and (min-width: 800px) {
+    position: absolute;
+    top: 65px;
+  }
+
 `;
 
 export const Form = styled.form`
@@ -185,7 +190,7 @@ export const Form = styled.form`
   }
 
   @media screen and (min-width: 800px) {
-    margin-top: 18%;
+    margin-top: 32%;
   }
 `;
 

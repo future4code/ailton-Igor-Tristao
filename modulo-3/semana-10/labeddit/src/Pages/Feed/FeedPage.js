@@ -89,7 +89,9 @@ function FeedPage() {
       .then((res) => {
         alert("Post criado com sucesso!");
       })
-      .catch((err) => {});
+      .catch((err) => {
+        console.log(err)
+      });
     clearFields();
   };
 

@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+- # LabEddit
+- 
+Link do Surge: https://abaft-wilderness.surge.sh
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Página inicial (login)
+#### Funciona:<br>
 
-## Available Scripts
+- Possibilidade de fazer login, autenticado e autorizado através da API do LabEddit, caso inserido uma conta existente leva até a página dos posts, caso a conta não exista continua na página de login e sinaliza ao usuário que foi inserido uma conta não existente.
 
-In the project directory, you can run:
+### Página Cadastro
+#### Funciona:<br>
 
-### `npm start`
+- Possibilidade de cadastrar uma conta na API. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Página Feed
+#### Funciona:<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Criação de um post
+- Visualização dos posts, com um botão no final da tela responsável pela paginação.
+- Criar votação nos posts com sinalização de icones
+- Compartilhar a página para as redes sociais, whatsapp, email.
+- Criar um comentário nos posts e também criar votos nos comentários.
 
-### `npm test`
+## Prints do projeto:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>Página Inicial (login)</p>
+<img src="https://user-images.githubusercontent.com/104534180/180691810-a00c8a89-0f64-4dce-8458-e44ebdf1a24a.png" alt="tela-inicial" width="350px" height="200px"/>
 
-### `npm run build`
+<p>Página Cadastro</p>
+<img src="https://user-images.githubusercontent.com/104534180/180692075-528163b4-7282-406d-8e80-0b7eb947b5ba.png" alt="tela-pokedex" width="350px" height="200px"/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p>Página Feeds</p>
+<img src="https://user-images.githubusercontent.com/104534180/180691988-67893999-c332-46cf-a43d-1ace581a21c0.png" alt="tela-detalhes" width="350px" height="200px"/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p>Comentários</p>
+<img src="https://user-images.githubusercontent.com/104534180/180692137-4a23f2ec-aa3a-42d4-9247-d9190c78da3d.png" alt="tela-batalha" width="350px" height="200px"/>
