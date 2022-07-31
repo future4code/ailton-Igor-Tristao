@@ -1,6 +1,8 @@
 - # LabEddit
-- 
-Link do Surge: https://abaft-wilderness.surge.sh
+
+  _Primeiro projeto *Mobile First* realizado na Labenu. Também foi inserido responsividade para desktop._
+
+Link do Surge: https://labeddit-igr.surge.sh
 
 ### Página inicial (login)
 #### Funciona:<br>
@@ -10,27 +12,28 @@ Link do Surge: https://abaft-wilderness.surge.sh
 ### Página Cadastro
 #### Funciona:<br>
 
-- Possibilidade de cadastrar uma conta na API. 
+- Possibilidade de cadastrar uma conta no LabEddit.
 
 ### Página Feed
 #### Funciona:<br>
 
-- Criação de um post
-- Visualização dos posts, com um botão no final da tela responsável pela paginação.
-- Criar votação nos posts com sinalização de icones
-- Compartilhar a página para as redes sociais, whatsapp, email.
+- Buscar post pelo conteúdo do título/post,
+- Criação de um post,
+- Visualização dos posts, com um botão no final da tela responsável pela paginação,
+- Criar votação nos posts com sinalização de ícones,
+- Compartilhar a página para as redes sociais, whatsapp, email,
 - Criar um comentário nos posts e também criar votos nos comentários.
 
 ## Prints do projeto:
 
 <p>Página Inicial (login)</p>
-<img src="https://user-images.githubusercontent.com/104534180/180691810-a00c8a89-0f64-4dce-8458-e44ebdf1a24a.png" alt="tela-inicial" width="350px" height="200px"/>
+<img src="https://user-images.githubusercontent.com/100432523/182033095-163b7d61-70d8-41aa-9e64-96c2cbead5d0.png" alt="tela-inicial" width="200px" height="450px"/>
 
 <p>Página Cadastro</p>
-<img src="https://user-images.githubusercontent.com/104534180/180692075-528163b4-7282-406d-8e80-0b7eb947b5ba.png" alt="tela-pokedex" width="350px" height="200px"/>
+<img src="https://user-images.githubusercontent.com/100432523/182033089-27c41e38-6185-464b-9b61-29339d7e51b8.png" alt="tela-pokedex" width="200px" height="450px"/>
 
 <p>Página Feeds</p>
-<img src="https://user-images.githubusercontent.com/104534180/180691988-67893999-c332-46cf-a43d-1ace581a21c0.png" alt="tela-detalhes" width="350px" height="200px"/>
+<img src="https://user-images.githubusercontent.com/100432523/182033093-367324f5-4b0f-4193-9378-ea66a1d8d1dc.png" alt="tela-detalhes" width="200px" height="450px"/>
 
 <p>Comentários</p>
-<img src="https://user-images.githubusercontent.com/104534180/180692137-4a23f2ec-aa3a-42d4-9247-d9190c78da3d.png" alt="tela-batalha" width="350px" height="200px"/>
+<img src="https://user-images.githubusercontent.com/100432523/182033092-8120b8b4-93bd-40e3-ba97-28aa39c22710.png" alt="tela-batalha" width="200px" height="450px"/>
