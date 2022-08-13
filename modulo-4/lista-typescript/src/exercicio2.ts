@@ -1,4 +1,4 @@
-function returnType (value: any) {
+function returnType (value: any): any {
     return typeof value
 }
 

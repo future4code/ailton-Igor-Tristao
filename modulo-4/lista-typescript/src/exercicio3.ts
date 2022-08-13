@@ -6,13 +6,14 @@ enum GENERO {
   TERROR = "terror",
 }
 
-function organizeFilms(filmName: string, releaseYear: number, genre: GENERO, reviewScore?: number) {
-  type organizedFilms = {
-    name: string;
-    year: number;
-    genre: GENERO;
-    reviewScore?: number;
-  };
+type organizedFilms = {
+  name: string;
+  year: number;
+  genre: GENERO;
+  reviewScore?: number;
+};
+
+function organizeFilms(filmName: string, releaseYear: number, genre: GENERO, reviewScore?: number): organizedFilms {
 
   if (reviewScore !== undefined) {
     const newFilm: organizedFilms = {
@@ -31,6 +32,7 @@ function organizeFilms(filmName: string, releaseYear: number, genre: GENERO, rev
     return newFilm2
   }
 }
-console.log(organizeFilms("Filme de ação", 2010, GENERO.ACAO, 20))
-console.log(organizeFilms("Filme aterroziante", 2000, GENERO.TERROR, 50))
-console.log(organizeFilms("Filme romantico", 1970, GENERO.ROMANCE))
+
+console.table(organizeFilms("Filme de ação", 2010, GENERO.ACAO, 20))
+console.table(organizeFilms("Filme aterroziante", 2000, GENERO.TERROR, 50))
+console.table(organizeFilms("Filme romantico", 1970, GENERO.ROMANCE))

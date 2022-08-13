@@ -16,13 +16,13 @@ const clients: Person[] = [
 function getClientsWithDebit (clientsArray: Person[]): Person[] {
 
     const calcTotalBalance: Person[] = clientsArray.map((client) => {
-        const totalDebit = client.debitos.reduce((curr, prev) => curr + prev, 0)
+        const totalDebit: number = client.debitos.reduce((curr, prev) => curr + prev, 0)
         client.debitos = []
         client.saldoTotal = client.saldoTotal - totalDebit
         return client
-    }).filter((client3) => {
-        if(client3.saldoTotal < 0) {
-            return client3
+    }).filter((client2) => {
+        if(client2.saldoTotal < 0) {
+            return client2
         }
     })
     return calcTotalBalance

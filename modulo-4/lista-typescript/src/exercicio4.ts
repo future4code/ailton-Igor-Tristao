@@ -11,7 +11,7 @@ type Pessoa = {
   presencial: boolean;
 };
 
-const collaborators: { nome: string; salário: number; setor: SETOR; presencial: boolean }[] = [
+const collaborators: Pessoa[] = [
   { nome: "Marcos", salário: 2500, setor: SETOR.MARKETING, presencial: true },
   { nome: "Maria", salário: 1500, setor: SETOR.VENDAS, presencial: false },
   { nome: "Salete", salário: 2200, setor: SETOR.FINANCEIRO, presencial: true },

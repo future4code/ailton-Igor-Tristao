@@ -16,17 +16,17 @@ function findDv(cpfArray: string[], constant: number): number {
   return dv;
 }
 
-function validateCpf(cpf: string) {
+function validateCpf(cpf: string): boolean {
 
-  // Como o mesmo cálculo se repetia, eu criei uma função separada para encontrar o Dígito verificador.
+  // Como o mesmo cálculo se repetia, eu criei uma função separada para realizar toda a "matemática".
 
   // Encontrando o primeiro Dígito Verificador
-  const nineNumbers: string[] = cpf.slice(0, 11).replace(/[^a-z0-9]/gi, "").split("");
-  const dv1 = findDv(nineNumbers, 10);
+  const cpfFirstNineNumbers: string[] = cpf.slice(0, 11).replace(/[^a-z0-9]/gi, "").split("");
+  const dv1 = findDv(cpfFirstNineNumbers, 10);
 
   // Encontrando o segundo Dígito Verificador
-  const tenNumbers: string[] = [...nineNumbers, dv1.toString()];
-  const dv2 = findDv(tenNumbers, 11);
+  const cpfFirstTenNumbers: string[] = [...cpfFirstNineNumbers, dv1.toString()];
+  const dv2 = findDv(cpfFirstTenNumbers, 11);
 
   // Verificando se o CPF é válido
   const firstUserDv: number = Number(cpf.slice(12, 13));

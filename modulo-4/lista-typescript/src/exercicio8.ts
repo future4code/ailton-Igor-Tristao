@@ -5,7 +5,7 @@ function idCardNeedsRenewal (birthDate: string, issuanceIdCard: string): boolean
   const dateOfBirth: number = new Date(birthDate).getTime();
   const idade: number = Math.floor((currentDate - dateOfBirth) / 31536000000);  //Transformando de milisegundos para ano
 
-  // Descobrindo quanto tempo a pessoa está sem renovar a carteira
+  // Descobrindo quanto tempo a pessoa está sem renovar a carteira de identidade
   const dateOfIssuance: number = new Date(issuanceIdCard).getTime();
   const timeWithoutRenewal: number = Math.floor((currentDate - dateOfIssuance) / 31536000000); //Transformando de milisegundos para ano
 

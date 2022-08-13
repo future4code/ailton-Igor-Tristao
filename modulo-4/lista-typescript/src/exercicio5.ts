@@ -1,8 +1,8 @@
 type Users = {
-    name: string,
-    email: string,
-    role: string,
-}
+  name: string;
+  email: string;
+  role: string;
+};
 
 const users: Users[] = [
   { name: "Rogério", email: "roger@email.com", role: "user" },
@@ -13,16 +13,15 @@ const users: Users[] = [
   { name: "Carina", email: "carina@email.com", role: "admin" },
 ];
 
-function getAdminsEmail (usersArray: Users[]) {
+function getAdminsEmail(usersArray: Users[]) {
+  const usersEmails: string[] = [];
 
-    const usersEmails: string[] = []
-
-    const adminUsers: Users[] = usersArray.filter((user) => {
-        if(user.role === "admin") {
-            return usersEmails.push(user.email)
-        }
-    })
-    return usersEmails
+  usersArray.filter((user) => {
+    if (user.role === "admin") {
+      return usersEmails.push(user.email);
+    }
+  });
+  return usersEmails;
 }
 
-console.log(getAdminsEmail(users))
+console.log(getAdminsEmail(users));
