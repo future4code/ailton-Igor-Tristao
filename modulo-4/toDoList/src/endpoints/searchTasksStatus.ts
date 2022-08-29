@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { connection } from "../data/baseDataBase";
 
-export default async function getTaskByStatus(req: Request, res: Response) {
+export default async function searchTaskStatus (req: Request, res: Response) {
   try {
     const status = req.query.status;
 

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { connection } from "../data/baseDataBase";
 
-export default async function getTasksDelayed(req: Request, res: Response) {
+export default async function getDelayedTasks (req: Request, res: Response) {
   try {
 
     // Pegar as tasks atrasadas

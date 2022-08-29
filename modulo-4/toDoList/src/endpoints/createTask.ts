@@ -14,7 +14,7 @@ export default async function createTask(req: Request, res: Response) {
     const [day, month, year] = limitDate.split("/");
     const limitDateFixed: string = `${year}/${month}/${day}`;
 
-    // Encontrar usuário para pegar checar se existe com este ID & pegar apelido.
+    // Encontrar usuário para checar se existe com este ID + pegar apelido.
     const [findUser]: User[] = await connection("ToDoListUsers").where({
       id: creatorUserId,
     });

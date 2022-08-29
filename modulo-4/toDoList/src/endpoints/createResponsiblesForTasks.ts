@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { connection } from "../data/baseDataBase";
 
-export default async function setTaskToAnUser(req: Request, res: Response) {
+export default async function createResponsiblesForTasks (req: Request, res: Response) {
   try {
     const { task_id, responsible_user_id } = req.body;
 
@@ -68,7 +68,7 @@ export default async function setTaskToAnUser(req: Request, res: Response) {
             `);
     }
 
-    res.send({ message: `Task added to user(s) responsability successfully.` });
+    res.status(201).send({ message: `Task added to user(s) responsability successfully.` });
   } catch (error: any) {
     res.status(res.statusCode || 500).send({ message: error.message });
   }

@@ -1,13 +1,21 @@
 import { Request, Response } from "express";
 import { connection } from "../data/baseDataBase";
 
-export default async function getUserTasksResponsible ( req: Request, res: Response ) {
+export default async function getAllResponsiblesByTask(
+  req: Request,
+  res: Response
+) {
   try {
-    const taskId: number = Number(req.params.id)
+    const taskId: number = Number(req.params.id);
 
     if (!taskId) {
       res.statusCode = 400;
       throw new Error(`Task ID Required.`);
+    }
+
+    if (!Number(taskId)) {
+      res.statusCode = 400;
+      throw new Error("Field id must be a number");
     }
 
     const getUsers = await connection.raw(`
@@ -20,9 +28,15 @@ export default async function getUserTasksResponsible ( req: Request, res: Respo
         WHERE ToDoListTasks.task_id = ${taskId};
         `);
 
-    res.status(200).send({ users: getUsers[0] });
+    if (getUsers[0].length === 0) {
+      res.statusCode = 404;
+      throw new Error("Task not found or there is no responsible users");
+    }
 
+    res.status(200).send({ users: getUsers[0] });
   } catch (error: any) {
-    res.status(res.statusCode || 500).send({ message: error.message || error.sqlMessage });
+    res
+      .status(res.statusCode || 500)
+      .send({ message: error.message || error.sqlMessage });
   }
 }

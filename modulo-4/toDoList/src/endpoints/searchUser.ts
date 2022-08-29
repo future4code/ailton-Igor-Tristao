@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { connection } from "../data/baseDataBase";
 
-export default async function getUserQuery(req: Request, res: Response) {
+export default async function searchUser (req: Request, res: Response) {
   try {
     const searchWord = req.query.query;
 

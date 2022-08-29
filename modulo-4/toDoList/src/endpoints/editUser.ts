@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { connection } from "../data/baseDataBase";
 
-export default async function updateUser(req: Request, res: Response) {
+export default async function editUser (req: Request, res: Response) {
   try {
     const userId: string = req.params.id as string;
     const { name, nickname, email } = req.body;
