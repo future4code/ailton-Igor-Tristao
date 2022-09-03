@@ -5,8 +5,19 @@ import allProducts from "../data/allProducts";
 export default async function getProducts(req: Request, res: Response) {
   try {
 
+    let order = req.query.order as string
+    let search = req.query.search as string
+
+    if(!order) {
+      order = ""
+    }
+
+    if(!search) {
+      search = ""
+    }
+
     // Pegar todos os produtos.
-    const products: Product[] = await allProducts();
+    const products: Product[] = await allProducts(order, search);
 
     // Checar se existem produtos
     if (products.length === 0) {

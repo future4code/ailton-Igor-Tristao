@@ -13,7 +13,7 @@ export default async function createProduct(req: Request, res: Response) {
         throw new Error(`All fields must be provided.`)
     }
 
-    const products: Product[] = await allProducts()
+    const products: Product[] = await allProducts("","")
 
     const newProduct: Product = {
         id: `${products.length + 1}`,
