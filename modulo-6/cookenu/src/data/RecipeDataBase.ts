@@ -10,7 +10,7 @@ export class RecipeDataBase extends BaseDataBase {
     }
   }
 
-  async getRecipe(id: string) {
+  async getRecipeById(id: string) {
     try {
       const recipe = await this.getConnection()
         .where({ id })
@@ -21,6 +21,36 @@ export class RecipeDataBase extends BaseDataBase {
       }
 
       return Recipe.toRecipeModel(recipe[0]);
+    } catch (error: any) {
+      throw new Error(error.sqlMessage || error.message);
+    }
+  }
+
+  async getAllRecipes() {
+    try {
+      const recipes = await this.getConnection().from("cookenu_recipe");
+      return recipes;
+    } catch (error: any) {
+      throw new Error(error.sqlMessage || error.message);
+    }
+  }
+
+  async updateRecipe(id: string, title: string, description: string) {
+    try {
+      await this.getConnection()
+        .update({ title, description })
+        .where({ id })
+        .into("cookenu_recipe");
+    } catch (error: any) {
+      throw new Error(error.sqlMessage || error.message);
+    }
+  }
+
+  async deleteRecipe(id: string) {
+    try {
+
+      await this.getConnection().delete().where({id}).from('cookenu_recipe')
+
     } catch (error: any) {
       throw new Error(error.sqlMessage || error.message);
     }

@@ -1,4 +1,4 @@
 export enum typeUser {
-    ADMIN = "ADMIN",
-    NORMAL = "NORMAL",
+    ADMIN = "admin",
+    NORMAL = "normal",
   }
