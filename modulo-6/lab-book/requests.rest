@@ -1,0 +1,31 @@
+### 1) Signup
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "Beltrano",
+    "email": "beltrano@gmail.com",
+    "password": "abc123"
+}
+
+### 2) Login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "beltrano@gmail.com",
+    "password": "abc123"
+}
+
+### 3) Get users
+GET http://localhost:3003/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4Y2U0M2FhLTFiMjUtNDQ2Ni04YmY4LTA4NGRlNGVhOTU4OCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM2MTkyNTYsImV4cCI6MTY2MzcwNTY1Nn0.aqPUrdD-qnZAS5Cq_iLh4_lU5sghAZPLddl02hGCGso
+
+### 4) Get users with query
+GET http://localhost:3003/users?search=Astr
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4Y2U0M2FhLTFiMjUtNDQ2Ni04YmY4LTA4NGRlNGVhOTU4OCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM2MTkyNTYsImV4cCI6MTY2MzcwNTY1Nn0.aqPUrdD-qnZAS5Cq_iLh4_lU5sghAZPLddl02hGCGso
+
+
+### 5) Delete user
+DELETE http://localhost:3003/users/28ce43aa-1b25-4466-8bf8-084de4ea9588
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4Y2U0M2FhLTFiMjUtNDQ2Ni04YmY4LTA4NGRlNGVhOTU4OCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM2MTkyNTYsImV4cCI6MTY2MzcwNTY1Nn0.aqPUrdD-qnZAS5Cq_iLh4_lU5sghAZPLddl02hGCGso
