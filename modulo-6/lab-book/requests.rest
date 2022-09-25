@@ -3,9 +3,10 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-    "name": "Beltrano",
-    "email": "beltrano@gmail.com",
-    "password": "abc123"
+    "name": "ADMIN",
+    "email": "admin@gmail.com",
+    "password": "abc123",
+    "role": "ADMIN"
 }
 
 ### 2) Login
@@ -17,15 +18,27 @@ Content-Type: application/json
     "password": "abc123"
 }
 
-### 3) Get users
-GET http://localhost:3003/users
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4Y2U0M2FhLTFiMjUtNDQ2Ni04YmY4LTA4NGRlNGVhOTU4OCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM2MTkyNTYsImV4cCI6MTY2MzcwNTY1Nn0.aqPUrdD-qnZAS5Cq_iLh4_lU5sghAZPLddl02hGCGso
+### 3) create Post
+POST http://localhost:3003/posts
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyY2ZkM2VhLWZlNTItNGE3NS05MjU4LTFkY2E3NjNkYjE5YSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM5NDY0MDYsImV4cCI6MTY2NDAzMjgwNn0.27XAA5YI_vTvaAoOufRFmiEkkghV_gUur9CfqLhNYsI
+Content-Type: application/json
 
-### 4) Get users with query
-GET http://localhost:3003/users?search=Astr
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4Y2U0M2FhLTFiMjUtNDQ2Ni04YmY4LTA4NGRlNGVhOTU4OCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM2MTkyNTYsImV4cCI6MTY2MzcwNTY1Nn0.aqPUrdD-qnZAS5Cq_iLh4_lU5sghAZPLddl02hGCGso
+{
+    "content": "dasdsa"
+}
 
+### 4) Get posts
+GET http://localhost:3003/posts
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwZDdlMGE3LWRlZjgtNDY2ZC1iM2I3LWVmYjRhZjQ5MzJkOCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjQwMzIzMTEsImV4cCI6MTY2NDExODcxMX0.2odFm-XUNuU-RB0HnmTC6EXNeWm9VZyV2TiBmFO1WWU
 
-### 5) Delete user
-DELETE http://localhost:3003/users/28ce43aa-1b25-4466-8bf8-084de4ea9588
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4Y2U0M2FhLTFiMjUtNDQ2Ni04YmY4LTA4NGRlNGVhOTU4OCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM2MTkyNTYsImV4cCI6MTY2MzcwNTY1Nn0.aqPUrdD-qnZAS5Cq_iLh4_lU5sghAZPLddl02hGCGso
+### 5) Delete post
+DELETE http://localhost:3003/posts/201
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwZDdlMGE3LWRlZjgtNDY2ZC1iM2I3LWVmYjRhZjQ5MzJkOCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjQwMzIzMTEsImV4cCI6MTY2NDExODcxMX0.2odFm-XUNuU-RB0HnmTC6EXNeWm9VZyV2TiBmFO1WWU
+
+### 6) Like post
+POST http://localhost:3003/posts/like/202
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwZDdlMGE3LWRlZjgtNDY2ZC1iM2I3LWVmYjRhZjQ5MzJkOCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjQwMzIzMTEsImV4cCI6MTY2NDExODcxMX0.2odFm-XUNuU-RB0HnmTC6EXNeWm9VZyV2TiBmFO1WWU
+
+### 7) Dislike post
+POST http://localhost:3003/posts/dislike/202
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwZDdlMGE3LWRlZjgtNDY2ZC1iM2I3LWVmYjRhZjQ5MzJkOCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjQwMzIzMTEsImV4cCI6MTY2NDExODcxMX0.2odFm-XUNuU-RB0HnmTC6EXNeWm9VZyV2TiBmFO1WWU

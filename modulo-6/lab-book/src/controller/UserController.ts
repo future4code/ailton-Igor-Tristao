@@ -1,15 +1,15 @@
 import { Request, Response } from "express";
 import { UserBusiness } from "../business/UserBusiness";
-import { ISignupInputDTO } from "../models/User";
+import { ILoginInputDTO, ISignupInputDTO } from "../models/User";
 
 export class UserController {
   constructor(private userBusiness: UserBusiness) {}
 
   public signup = async (req: Request, res: Response) => {
     try {
-      const { name, email, password } = req.body;
+      const { name, email, password, role } = req.body;
 
-      const input: ISignupInputDTO = { name, email, password };
+      const input: ISignupInputDTO = { name, email, password, role };
 
       const token = await this.userBusiness.userCreator(input);
 
@@ -21,11 +21,13 @@ export class UserController {
 
   public login = async (req: Request, res: Response) => {
     try {
+      const { email, password } = req.body;
 
+      const input: ILoginInputDTO = { email, password };
 
-      res.send("oi");
+      const token = await this.userBusiness.userLogin(input);
 
-      
+      res.send(token);
     } catch (error: any) {
       res.status(error.statusCode || 500).send({ message: error.message });
     }

@@ -4,11 +4,19 @@ import { BaseDatabase } from "./BaseDatabase";
 export class UserDatabase extends BaseDatabase {
   public static TABLE_USERS = "Labook_Users";
 
-  async getUserByEmail(email: string) {
+  async getUserByEmail(email: string): Promise<User> {
     try {
-      const user = await BaseDatabase.connection("Labook_Users")
+      const userDB = await BaseDatabase.connection("Labook_Users")
         .select()
         .where({ email });
+
+      const user = new User(
+        userDB[0].id,
+        userDB[0].name,
+        userDB[0].email,
+        userDB[0].password,
+        userDB[0].role
+      );
 
       return user;
     } catch (error: any) {
@@ -16,7 +24,7 @@ export class UserDatabase extends BaseDatabase {
     }
   }
 
-  async insertUser(user: User) {
+  async insertUser(user: User): Promise<void> {
     try {
       const userDB: IUserDB = {
         id: user.getId(),
