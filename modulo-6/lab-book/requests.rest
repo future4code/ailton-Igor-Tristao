@@ -1,0 +1,44 @@
+### 1) Signup
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "ADMIN",
+    "email": "admin@gmail.com",
+    "password": "abc123",
+    "role": "ADMIN"
+}
+
+### 2) Login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "beltrano@gmail.com",
+    "password": "abc123"
+}
+
+### 3) create Post
+POST http://localhost:3003/posts
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyY2ZkM2VhLWZlNTItNGE3NS05MjU4LTFkY2E3NjNkYjE5YSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM5NDY0MDYsImV4cCI6MTY2NDAzMjgwNn0.27XAA5YI_vTvaAoOufRFmiEkkghV_gUur9CfqLhNYsI
+Content-Type: application/json
+
+{
+    "content": "dasdsa"
+}
+
+### 4) Get posts
+GET http://localhost:3003/posts
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwZDdlMGE3LWRlZjgtNDY2ZC1iM2I3LWVmYjRhZjQ5MzJkOCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjQwMzIzMTEsImV4cCI6MTY2NDExODcxMX0.2odFm-XUNuU-RB0HnmTC6EXNeWm9VZyV2TiBmFO1WWU
+
+### 5) Delete post
+DELETE http://localhost:3003/posts/201
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwZDdlMGE3LWRlZjgtNDY2ZC1iM2I3LWVmYjRhZjQ5MzJkOCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjQwMzIzMTEsImV4cCI6MTY2NDExODcxMX0.2odFm-XUNuU-RB0HnmTC6EXNeWm9VZyV2TiBmFO1WWU
+
+### 6) Like post
+POST http://localhost:3003/posts/like/202
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwZDdlMGE3LWRlZjgtNDY2ZC1iM2I3LWVmYjRhZjQ5MzJkOCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjQwMzIzMTEsImV4cCI6MTY2NDExODcxMX0.2odFm-XUNuU-RB0HnmTC6EXNeWm9VZyV2TiBmFO1WWU
+
+### 7) Dislike post
+POST http://localhost:3003/posts/dislike/202
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwZDdlMGE3LWRlZjgtNDY2ZC1iM2I3LWVmYjRhZjQ5MzJkOCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjQwMzIzMTEsImV4cCI6MTY2NDExODcxMX0.2odFm-XUNuU-RB0HnmTC6EXNeWm9VZyV2TiBmFO1WWU
