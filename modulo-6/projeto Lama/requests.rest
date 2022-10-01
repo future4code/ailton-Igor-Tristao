@@ -1,0 +1,40 @@
+### 1) Signup
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "usuario",
+    "email": "usuario@gmail.com",
+    "password": "abc123"
+}
+
+### 2) Login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "abc123"
+}
+
+### 3) create Show
+POST http://localhost:3003/shows/create
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlkYjEyODcwLTVhNzItNDlkYS1hNmU1LWQ5NzFhMzgwZTlkNSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2NDU4NDYzNiwiZXhwIjoxNjY0NjcxMDM2fQ.-Z6IdI9CLGIeT-2-xvEngncrlen2VrjWKUVdXo9sDXU
+Content-Type: application/json
+
+{
+    "band": "Paramore",
+    "startsAt": "09/12/2022"
+}
+
+### 4) Get shows
+GET http://localhost:3003/shows
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlkYjEyODcwLTVhNzItNDlkYS1hNmU1LWQ5NzFhMzgwZTlkNSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2NDU1NzU0NCwiZXhwIjoxNjY0NjQzOTQ0fQ.i1SRu6E3C_CBVii33EWA3poRPAqm3OB1SAwTGfZfH0U
+
+### 5) Purchase ticket
+post http://localhost:3003/shows/ticket/purchase/56961d8f-914d-4889-8d8c-d098fa1ed0df
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlkYjEyODcwLTVhNzItNDlkYS1hNmU1LWQ5NzFhMzgwZTlkNSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2NDU1NzU0NCwiZXhwIjoxNjY0NjQzOTQ0fQ.i1SRu6E3C_CBVii33EWA3poRPAqm3OB1SAwTGfZfH0U
+
+### 6) Delete ticket
+DELETE http://localhost:3003/shows/ticket/201
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlkYjEyODcwLTVhNzItNDlkYS1hNmU1LWQ5NzFhMzgwZTlkNSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2NDU1NzU0NCwiZXhwIjoxNjY0NjQzOTQ0fQ.i1SRu6E3C_CBVii33EWA3poRPAqm3OB1SAwTGfZfH0U
