@@ -61,7 +61,7 @@ export class UserBusiness {
         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
       )
     ) {
-      throw new Error("Parâmetro 'email' inválido");
+      throw new UnprocessableError("Parâmetro 'email' inválido");
     }
 
     if (typeof password !== "string") {
@@ -130,7 +130,7 @@ export class UserBusiness {
 
     if (password.length < 6) {
       throw new UnprocessableError(
-        "Parâmetro 'password' deve possuir no mínimo 6 caracteres"
+        "Parâmetro 'password' precisa ter no mínimo 6 caracteres."
       );
     }
 
@@ -139,7 +139,7 @@ export class UserBusiness {
         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
       )
     ) {
-      throw new Error("Parâmetro 'email' inválido");
+      throw new UnprocessableError("Parâmetro 'email' inválido");
     }
 
     // Verificação se existe um usuário com este email
@@ -182,4 +182,3 @@ export class UserBusiness {
   };
 }
 
-// COMPARADO E ESTA TUDO OK
