@@ -59,7 +59,7 @@ export class ShowBusiness {
 
     if (showStartsAt < festivalStartsAt) {
       throw new ParamsError(
-        "O início do show deve ser depois do dia 05 de dezembro (início do festival)"
+        "O início do show deve ser depois do dia 05 de dezembro de 2022 (início do festival)"
       );
     }
 
