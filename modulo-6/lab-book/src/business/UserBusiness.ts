@@ -136,7 +136,7 @@ export class UserBusiness {
     // Verificação se a senha esta correta
     const hashCompare = await this.hashManager.compare(
       password,
-      userExists.getPassword()
+      userExists[0].password
     );
 
     if (!hashCompare) {
@@ -144,8 +144,8 @@ export class UserBusiness {
     }
 
     const payload: ITokenPayload = {
-      id: userExists.getId(),
-      role: userExists.getRole()
+      id: userExists[0].id,
+      role: userExists[0].role
     };
 
     const token = this.authenticator.generateToken(payload);

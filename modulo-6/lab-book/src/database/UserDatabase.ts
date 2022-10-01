@@ -4,21 +4,17 @@ import { BaseDatabase } from "./BaseDatabase";
 export class UserDatabase extends BaseDatabase {
   public static TABLE_USERS = "Labook_Users";
 
-  async getUserByEmail(email: string): Promise<User> {
+  async getUserByEmail(email: string) {
     try {
       const userDB = await BaseDatabase.connection("Labook_Users")
         .select()
         .where({ email });
 
-      const user = new User(
-        userDB[0].id,
-        userDB[0].name,
-        userDB[0].email,
-        userDB[0].password,
-        userDB[0].role
-      );
+      if(userDB.length === 0) {
+        return undefined
+      }
 
-      return user;
+      return userDB;
     } catch (error: any) {
       throw new Error(error.message || error.sqlMessage);
     }
