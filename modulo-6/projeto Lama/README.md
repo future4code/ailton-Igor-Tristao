@@ -4,6 +4,8 @@
 
 Criação de uma API para um show de músicas que conta com a participação de bandas. 
 
+Documentação da API: https://documenter.getpostman.com/view/21551909/2s83tDpCtY#16ed24ba-c8d3-4847-93bf-4716e8da5311
+
 Para gerenciar o evento é necessário organizar e centralizar as informações dos shows em um servidor (bando de dados mySQL), que então disponibiliza os dados para o website no front-end. Além de controlar os eventos com suas bandas e datas do show, a aplicação também gerencia os ingressos de cada show. A arena tem uma capacidade máxima de 5000 pessoas.
 
 Funcionalidades:
